@@ -1,1 +1,1 @@
-# Squad_Troubleshooter_GUI
+# SuicidalChair's Improved Squad Troubleshooter
