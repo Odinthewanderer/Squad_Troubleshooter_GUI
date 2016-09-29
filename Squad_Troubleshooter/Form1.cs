@@ -41,7 +41,8 @@ namespace Squad_Troubleshooter
                 // DEBUG STATEMENT : REMOVE WHEN COMPLETED
                 //output_textbox.AppendText(path);
 
-                System.IO.Directory.Delete(path, true);
+                //System.IO.Directory.Delete(path, true);
+                System.IO.DirectoryInfo di = new DirectoryInfo(path);
             }
             catch (IOException ie)
             {
@@ -69,6 +70,7 @@ namespace Squad_Troubleshooter
 
             // DEBUG STATEMENT : REMOVE WHEN COMPLETE
             //output_textbox.AppendText(strCmdText);
+
             output_textbox.AppendText("Generating log files...\n");
             try
             {
@@ -152,6 +154,24 @@ namespace Squad_Troubleshooter
             output_textbox.Clear();
             output_textbox.AppendText("Install VC Redistributable 2013 + 2015\n");
             output_textbox.AppendText("=========================================\n");
+
+            try
+            {
+                string sysCmd1 = "/C C:\\Program Files (x86)\\Steam\\steamapps\\common\\Squad\\_CommonRedist\\vcredist\\2013\\vcredist_x64.exe //install //passive //norestart";
+                string sysCmd2 = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Squad\\_CommonRedist\\vcredist\\2015\\vc_redist.x64.exe //install //passive //norestart";
+
+                Process.Start(sysCmd1);
+                Process.Start(sysCmd2);
+            }
+            catch (Exception ex)
+            {
+                output_textbox.AppendText(ex.Message + "\n");
+                return;
+            }
+            finally
+            {
+                output_textbox.AppendText("VC Redistributable installations complete");
+            }
         }
 
         // Disables Windows firewall, as a troubleshooting step if your having networking issues
