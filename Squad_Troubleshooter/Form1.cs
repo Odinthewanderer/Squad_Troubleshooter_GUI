@@ -32,21 +32,26 @@ namespace Squad_Troubleshooter
             output_textbox.Clear();
             output_textbox.AppendText("Nuke AppData config files\n");
             output_textbox.AppendText("=========================================\n");
-            
+
+            var path = Environment.GetEnvironmentVariable("LocalAppData");
+            path = path + "\\Squad";
+
             try
             {
-                var path = Environment.GetEnvironmentVariable("LocalAppData");
-                path = path + "\\Squad";
-
                 // DEBUG STATEMENT : REMOVE WHEN COMPLETED
                 //output_textbox.AppendText(path);
 
                 System.IO.Directory.Delete(path, true);
-                output_textbox.AppendText("AppData directory ( " + path + " ) has been successfully nuked!");
             }
             catch (IOException ie)
             {
                 output_textbox.AppendText(ie.Message);
+                return;
+            }
+            finally
+            {
+                output_textbox.AppendText("AppData directory ( " + path + " ) has been successfully nuked!");
+
             }
         }
 
@@ -59,7 +64,28 @@ namespace Squad_Troubleshooter
             output_textbox.AppendText("Generate Windows event logs\n");
             output_textbox.AppendText("=========================================\n");
 
-            
+            string strCmdText;
+            strCmdText = "/C wevtutil epl Application \"%userprofile%\\Desktop\\SQUADEventLogs.evtx\"";
+
+            // DEBUG STATEMENT : REMOVE WHEN COMPLETE
+            //output_textbox.AppendText(strCmdText);
+            output_textbox.AppendText("Generating log files...\n");
+            try
+            {
+                System.Diagnostics.Process.Start("CMD.exe", strCmdText);
+                output_textbox.AppendText("\n");
+            }
+            catch (Exception ex)
+            {
+                output_textbox.AppendText(ex.Message);
+                return;
+            }
+            finally
+            { 
+                output_textbox.AppendText("Log files have been generated and are now on your desktop\n");
+                output_textbox.AppendText("Log is saved as \'SQUADEventLogs.evtx\'\n");
+                output_textbox.AppendText("Please send all log files to support@joinsquad.com\n");
+            }
         }
 
         // Launches the EasyAntiCheat installer in the Squad install directory, make sure you pick squad as your game.
@@ -68,7 +94,7 @@ namespace Squad_Troubleshooter
             output_textbox.Clear();
             output_textbox.AppendText("Reinstall Easy Anticheat (EAC)\n");
             output_textbox.AppendText("=========================================\n");
-            
+
             try
             {
                 Process.Start("C:\\Program Files(x86)\\Steam\\steamapps\\common\\Squad\\EasyAntiCheat\\EasyAntiCheat_Setup.exe");
@@ -77,9 +103,12 @@ namespace Squad_Troubleshooter
             catch (Exception ex)
             {
                 output_textbox.AppendText(ex.Message + "\n");
+                return;
             }
-
-            output_textbox.AppendText("EAC has been reinstalled");
+            finally
+            {
+                output_textbox.AppendText("EAC has been reinstalled");
+            }
         }
 
         // Copies all squad log files including UE4 Dump files to your desktop into a SQUAD logs folder, zip it up 
@@ -107,12 +136,13 @@ namespace Squad_Troubleshooter
             {
                 output_textbox.AppendText("Copying...\n");
                 System.IO.File.Copy(path, destPath, true);
-                output_textbox.AppendText("Copy Complete!\n");
             }
             catch (IOException ie)
             {
                 output_textbox.AppendText(ie.Message);
+                return;
             }
+            output_textbox.AppendText("Copy Complete!\n");
         }
 
         // Attempts to silently install VC Redistributables 2013 and 2015, if any error occurs you may have to 
@@ -133,20 +163,19 @@ namespace Squad_Troubleshooter
 
             try
             {
-                Process proc = new Process();
-                string top = "netsh.exe";
-                proc.StartInfo.Arguments = "Firewall set opmode disable";
-                proc.StartInfo.FileName = top;
-                proc.StartInfo.UseShellExecute = false;
-                proc.StartInfo.RedirectStandardOutput = true;
-                proc.StartInfo.CreateNoWindow = true;
-                proc.Start();
-                proc.WaitForExit();
-                output_textbox.AppendText("Firewall Disabled\n");
+                output_textbox.AppendText("Disabling the Windows firewall...");
+                string sysCmd = "/C netsh advfirewall set allprofiles state off";
+                System.Diagnostics.Process.Start("CMD.exe", sysCmd);
+                output_textbox.AppendText("\n");
             }
             catch (Exception ex)
             {
                 output_textbox.AppendText(ex.Message);
+                return;
+            }
+            finally
+            {
+                output_textbox.AppendText("Firewall Disabled\n");
             }
         }
 
@@ -159,20 +188,19 @@ namespace Squad_Troubleshooter
 
             try
             {
-                Process proc = new Process();
-                string top = "netsh.exe";
-                proc.StartInfo.Arguments = "Firewall set opmode enable";
-                proc.StartInfo.FileName = top;
-                proc.StartInfo.UseShellExecute = false;
-                proc.StartInfo.RedirectStandardOutput = true;
-                proc.StartInfo.CreateNoWindow = true;
-                proc.Start();
-                proc.WaitForExit();
-                output_textbox.AppendText("Firewall Enabled\n");
+                output_textbox.AppendText("Enabling the Windows firewall...");
+                string sysCmd = "/C netsh advfirewall set allprofiles state on";
+                System.Diagnostics.Process.Start("CMD.exe", sysCmd);
+                output_textbox.AppendText("\n");
             }
             catch (Exception ex)
             {
                 output_textbox.AppendText(ex.Message);
+                return;
+            }
+            finally
+            {
+                output_textbox.AppendText("Firewall Enabled\n");
             }
         }
 
