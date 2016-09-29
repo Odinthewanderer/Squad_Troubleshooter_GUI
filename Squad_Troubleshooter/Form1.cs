@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 
 namespace Squad_Troubleshooter
@@ -58,7 +59,7 @@ namespace Squad_Troubleshooter
             output_textbox.AppendText("Generate Windows event logs\n");
             output_textbox.AppendText("=========================================\n");
 
-
+            
         }
 
         // Launches the EasyAntiCheat installer in the Squad install directory, make sure you pick squad as your game.
@@ -67,8 +68,18 @@ namespace Squad_Troubleshooter
             output_textbox.Clear();
             output_textbox.AppendText("Reinstall Easy Anticheat (EAC)\n");
             output_textbox.AppendText("=========================================\n");
+            
+            try
+            {
+                Process.Start("C:\\Program Files(x86)\\Steam\\steamapps\\common\\Squad\\EasyAntiCheat\\EasyAntiCheat_Setup.exe");
+                //Process.Start("E:\\SteamLibrary\\steamapps\\common\\Squad\\EasyAntiCheat\\EasyAntiCheat_Setup.exe");
+            }
+            catch (Exception ex)
+            {
+                output_textbox.AppendText(ex.Message + "\n");
+            }
 
-
+            output_textbox.AppendText("EAC has been reinstalled");
         }
 
         // Copies all squad log files including UE4 Dump files to your desktop into a SQUAD logs folder, zip it up 
@@ -120,7 +131,23 @@ namespace Squad_Troubleshooter
             output_textbox.AppendText("Disable Windows Firewall\n");
             output_textbox.AppendText("=========================================\n");
 
-
+            try
+            {
+                Process proc = new Process();
+                string top = "netsh.exe";
+                proc.StartInfo.Arguments = "Firewall set opmode disable";
+                proc.StartInfo.FileName = top;
+                proc.StartInfo.UseShellExecute = false;
+                proc.StartInfo.RedirectStandardOutput = true;
+                proc.StartInfo.CreateNoWindow = true;
+                proc.Start();
+                proc.WaitForExit();
+                output_textbox.AppendText("Firewall Disabled\n");
+            }
+            catch (Exception ex)
+            {
+                output_textbox.AppendText(ex.Message);
+            }
         }
 
         // Enable Windows firewall, (for when F didn't solve your issue and you want to undo)
@@ -129,6 +156,24 @@ namespace Squad_Troubleshooter
             output_textbox.Clear();
             output_textbox.AppendText("Enable Windows Firewall\n");
             output_textbox.AppendText("=========================================\n");
+
+            try
+            {
+                Process proc = new Process();
+                string top = "netsh.exe";
+                proc.StartInfo.Arguments = "Firewall set opmode enable";
+                proc.StartInfo.FileName = top;
+                proc.StartInfo.UseShellExecute = false;
+                proc.StartInfo.RedirectStandardOutput = true;
+                proc.StartInfo.CreateNoWindow = true;
+                proc.Start();
+                proc.WaitForExit();
+                output_textbox.AppendText("Firewall Enabled\n");
+            }
+            catch (Exception ex)
+            {
+                output_textbox.AppendText(ex.Message);
+            }
         }
 
         // will provide a URL to visit with the confirmed fix for server browser crashes.
