@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Squad_Troubleshooter
 {
     public partial class Form1 : Form
@@ -56,6 +57,8 @@ namespace Squad_Troubleshooter
             output_textbox.Clear();
             output_textbox.AppendText("Generate Windows event logs\n");
             output_textbox.AppendText("=========================================\n");
+
+
         }
 
         // Launches the EasyAntiCheat installer in the Squad install directory, make sure you pick squad as your game.
@@ -64,6 +67,8 @@ namespace Squad_Troubleshooter
             output_textbox.Clear();
             output_textbox.AppendText("Reinstall Easy Anticheat (EAC)\n");
             output_textbox.AppendText("=========================================\n");
+
+
         }
 
         // Copies all squad log files including UE4 Dump files to your desktop into a SQUAD logs folder, zip it up 
@@ -73,6 +78,30 @@ namespace Squad_Troubleshooter
             output_textbox.Clear();
             output_textbox.AppendText("Copy Squad Logs to Desktop\n");
             output_textbox.AppendText("=========================================\n");
+
+            string fileName = "Squad.log";
+            var path = Environment.GetEnvironmentVariable("LocalAppData");
+            path = path + "\\Squad\\Saved\\Logs\\" + fileName;
+
+            var destPath = Environment.GetEnvironmentVariable("USERPROFILE");
+            destPath = destPath + "\\Desktop\\Squad.log";
+
+            // DEBUG STATEMENT : REMOVE WHEN COMPLETED
+            //output_textbox.AppendText("FILE LOCATION: ");
+            //output_textbox.AppendText(path);
+            //output_textbox.AppendText("DESTINATION LOCATION: ");
+            //output_textbox.AppendText(destPath);
+
+            try
+            {
+                output_textbox.AppendText("Copying...\n");
+                System.IO.File.Copy(path, destPath, true);
+                output_textbox.AppendText("Copy Complete!\n");
+            }
+            catch (IOException ie)
+            {
+                output_textbox.AppendText(ie.Message);
+            }
         }
 
         // Attempts to silently install VC Redistributables 2013 and 2015, if any error occurs you may have to 
@@ -90,6 +119,8 @@ namespace Squad_Troubleshooter
             output_textbox.Clear();
             output_textbox.AppendText("Disable Windows Firewall\n");
             output_textbox.AppendText("=========================================\n");
+
+
         }
 
         // Enable Windows firewall, (for when F didn't solve your issue and you want to undo)
@@ -106,6 +137,9 @@ namespace Squad_Troubleshooter
             output_textbox.Clear();
             output_textbox.AppendText("Get help with game crashing on Server Browser\n");
             output_textbox.AppendText("=========================================\n");
+
+            output_textbox.AppendText("If you are experiancing game crashes when using the Server Browser in game copy the following URL and visit the forums: \n");
+            output_textbox.AppendText("http://goo.gl/yvTOfS \n");
         }
     }
 }
