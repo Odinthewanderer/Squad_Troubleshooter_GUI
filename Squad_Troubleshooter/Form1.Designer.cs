@@ -143,7 +143,9 @@
             this.Controls.Add(this.reinstallBtn);
             this.Controls.Add(this.generateBtn);
             this.Controls.Add(this.nukeBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "SuicidalChair\'s Improved Squad Troubleshooter";
             this.Load += new System.EventHandler(this.Form1_Load);
