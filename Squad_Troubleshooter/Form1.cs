@@ -158,7 +158,7 @@ namespace Squad_Troubleshooter
             try
             {
                 string sysCmd1 = "/C C:\\Program Files (x86)\\Steam\\steamapps\\common\\Squad\\_CommonRedist\\vcredist\\2013\\vcredist_x64.exe //install //passive //norestart";
-                string sysCmd2 = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Squad\\_CommonRedist\\vcredist\\2015\\vc_redist.x64.exe //install //passive //norestart";
+                string sysCmd2 = "/C C:\\Program Files (x86)\\Steam\\steamapps\\common\\Squad\\_CommonRedist\\vcredist\\2015\\vc_redist.x64.exe //install //passive //norestart";
 
                 Process.Start(sysCmd1);
                 Process.Start(sysCmd2);
