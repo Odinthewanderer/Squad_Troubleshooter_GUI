@@ -11,12 +11,16 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using Microsoft.Win32;
 using System.Security.Permissions;
-
+using System.Globalization;
+using System.Resources;
+using System.Threading;
 
 namespace Squad_Troubleshooter
 {
     public partial class Form1 : Form
     {
+        private string SELECTED_LANGUAGE = "ENGLISH";
+
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +28,17 @@ namespace Squad_Troubleshooter
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            SELECTED_LANGUAGE = "ENGLISH";
+            englishToolStripMenuItem.Checked = true;
+            germanToolStripMenuItem.Checked = false;
+            polishToolStripMenuItem.Checked = false;
+            frenchToolStripMenuItem.Checked = false;
+            chineseToolStripMenuItem.Checked = false;
+            russianToolStripMenuItem.Checked = false;
+            swedishToolStripMenuItem.Checked = false;
+            dutchToolStripMenuItem.Checked = false;
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
+            switchLanguage();
         }
 
         // Deletes the squad folder in %LocalAppData% (this will wipe your video / control settings in game). 
@@ -32,7 +46,7 @@ namespace Squad_Troubleshooter
         private void nukeBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
-            output_textbox.AppendText("Nuke AppData config files\n");
+            output_textbox.AppendText(Properties.Language.strings.NUKE_BUTTON + "\n");
             output_textbox.AppendText("=========================================\n");
 
             var path = Environment.GetEnvironmentVariable("LocalAppData");
@@ -49,7 +63,7 @@ namespace Squad_Troubleshooter
             }
             finally
             {
-                output_textbox.AppendText("AppData directory ( " + path + " ) has been successfully nuked!");
+                output_textbox.AppendText(Properties.Language.strings.NUKE_OUTPUT1 + "( " + path + " ) " + Properties.Language.strings.NUKE_OUTPUT2 + "\n");
             }
         }
 
@@ -59,13 +73,13 @@ namespace Squad_Troubleshooter
         private void generateBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
-            output_textbox.AppendText("Generate Windows event logs\n");
+            output_textbox.AppendText(Properties.Language.strings.GENERATE_BUTTON + "\n");
             output_textbox.AppendText("=========================================\n");
 
             string strCmdText;
             strCmdText = "/C wevtutil epl Application \"%userprofile%\\Desktop\\SQUADEventLogs.evtx\"";
-
-            output_textbox.AppendText("Generating log files...\n");
+            
+            output_textbox.AppendText(Properties.Language.strings.GENERATING_OUTPUT1 + "\n");
             try
             {
                 System.Diagnostics.Process.Start("CMD.exe", strCmdText);
@@ -77,16 +91,16 @@ namespace Squad_Troubleshooter
                 return;
             }
             finally
-            { 
-                output_textbox.AppendText("Log files have been generated and are now on your desktop\n");
-                output_textbox.AppendText("Log is saved as \'SQUADEventLogs.evtx\'\n");
-                output_textbox.AppendText("Please send all log files to support@joinsquad.com\n");
+            {
+                output_textbox.AppendText(Properties.Language.strings.GENERATING_OUTPUT2 + "\n");
+                output_textbox.AppendText(Properties.Language.strings.GENERATING_OUTPUT3 + "\'SQUADEventLogs.evtx\'\n");
+                output_textbox.AppendText(Properties.Language.strings.GENERATING_OUTPUT4 + "\n");
             }
         }
-
         // Launches the EasyAntiCheat installer in the Squad install directory, make sure you pick squad as your game.
         private void reinstallBtn_Click(object sender, EventArgs e)
         {
+            output_textbox.Clear();
             installTool(1);
         }
 
@@ -95,7 +109,7 @@ namespace Squad_Troubleshooter
         private void copyBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
-            output_textbox.AppendText("Copy Squad Logs to Desktop\n");
+            output_textbox.AppendText(Properties.Language.strings.COPY_OUTPUT1 + "\n");
             output_textbox.AppendText("=========================================\n");
 
             string fileName = "Squad.log";
@@ -107,7 +121,7 @@ namespace Squad_Troubleshooter
 
             try
             {
-                output_textbox.AppendText("Copying...\n");
+                output_textbox.AppendText(Properties.Language.strings.COPY_OUTPUT2 + "\n");
                 System.IO.File.Copy(path, destPath, true);
             }
             catch (IOException ie)
@@ -115,7 +129,7 @@ namespace Squad_Troubleshooter
                 output_textbox.AppendText(ie.Message);
                 return;
             }
-            output_textbox.AppendText("Copy Complete!\n");
+            output_textbox.AppendText(Properties.Language.strings.COPY_OUTPUT3 + "\n");
         }
 
         private string getSteamPath()
@@ -171,7 +185,6 @@ namespace Squad_Troubleshooter
             }
         }
 
-
         private bool installTool(int toolToInstall)
         {
             // This will install the requested tool.
@@ -192,7 +205,7 @@ namespace Squad_Troubleshooter
                     // RUN EAC INSTALLER
                     if (File.Exists(EAC_PATH))
                     {
-                        output_textbox.AppendText("Instlaling EasyAntiCheat_Setup.exe...");
+                        output_textbox.AppendText(Properties.Language.strings.REINSTALL_OUTPUT1 + "\n");
                         try
                         {
                             string installCommand = "/C " + EAC_PATH;
@@ -206,20 +219,20 @@ namespace Squad_Troubleshooter
                         }
                         finally
                         {
-                            output_textbox.AppendText("EAC installation complete");
+                            output_textbox.AppendText(Properties.Language.strings.REINSTALL_OUTPUT2 + "\n");
                         }
                     }
                     else
                     {
-                        output_textbox.AppendText("No binaries for EasyAntiCheat_Setup.exe...\n");
-                        output_textbox.AppendText("Skipping EasyAntiCheat_Setup.exe install...");
+                        output_textbox.AppendText(Properties.Language.strings.REINSTALL_ERROR_OUTPUT1 + "\n");
+                        output_textbox.AppendText(Properties.Language.strings.REINSTALL_ERROR_OUTPUT2 + "\n");
                     }
                     break;
                 case 2:
                     // RUN VC_REDIST (2013) INSTALLER
                     if (File.Exists(VCREDIST_PATH_2013))
                     {
-                        output_textbox.AppendText("Installing vc_redist.x64.exe...");
+                        output_textbox.AppendText(Properties.Language.strings.INSTALL_VCREDIST_2013_OUTPUT1 + "\n");
                         try
                         {
                             string installCommand = "/C " + VCREDIST_PATH_2013 + " //install //passive //norestart";
@@ -233,20 +246,20 @@ namespace Squad_Troubleshooter
                         }
                         finally
                         {
-                            output_textbox.AppendText("VC Redistributable installation complete");
+                            output_textbox.AppendText(Properties.Language.strings.INSTALL_VCREDIST_2013_OUTPUT2 + "\n");
                         }
                     }
                     else
                     {
-                        output_textbox.AppendText("No binaries for vc_redist.x64.exe...\n");
-                        output_textbox.AppendText("Skipping vc_redist.x64.exe (2013) install...");
+                        output_textbox.AppendText(Properties.Language.strings.INSTALL_VCREDIST_2013_ERROR_OUTPUT1 + "\n");
+                        output_textbox.AppendText(Properties.Language.strings.INSTALL_VCREDIST_2013_ERROR_OUTPUT2 + "\n");
                     }
                     break;
                 case 3:
                     // RUN VC_REDIST (2015) INSTALLER
                     if (File.Exists(VCREDIST_PATH_2015))
                     {
-                        output_textbox.AppendText("Installing vc_redist.x64.exe...");
+                        output_textbox.AppendText(Properties.Language.strings.INSTALL_VCREDIST_2015_OUTPUT1 + "\n");
                         try
                         {
                             string installCommand = "/C " + VCREDIST_PATH_2015 + " //install //passive //norestart";
@@ -259,18 +272,18 @@ namespace Squad_Troubleshooter
                         }
                         finally
                         {
-                            output_textbox.AppendText("VC Redistributable installation complete");
+                            output_textbox.AppendText(Properties.Language.strings.INSTALL_VCREDIST_2015_OUTPUT2 + "\n");
                         }
                     }
                     else
                     {
-                        output_textbox.AppendText("No binaries for vc_redist.x64.exe...\n");
-                        output_textbox.AppendText("Skipping vc_redist.x64.exe (2015) install...");
+                        output_textbox.AppendText(Properties.Language.strings.INSTALL_VCREDIST_2015_ERROR_OUTPUT1 + "\n");
+                        output_textbox.AppendText(Properties.Language.strings.INSTALL_VCREDIST_2015_ERROR_OUTPUT2 + "\n");
                     }
                     break;
                 default:
                     // OUTPUT ERROR AND EXIT
-                    output_textbox.AppendText("Something went wrong...");
+                    output_textbox.AppendText(Properties.Language.strings.UNKNOWN_ERROR + "\n");
                     break;
             }
             return false;
@@ -280,6 +293,7 @@ namespace Squad_Troubleshooter
         // make sure your copy of windows is up to date, make sure no updates are available
         private void installBtn_Click(object sender, EventArgs e)
         {
+            output_textbox.Clear();
             installTool(2);
             installTool(3);
         }
@@ -288,12 +302,12 @@ namespace Squad_Troubleshooter
         private void disableBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
-            output_textbox.AppendText("Disable Windows Firewall\n");
+            output_textbox.AppendText(Properties.Language.strings.DISABLE_FIREWALL_BUTTON + "\n");
             output_textbox.AppendText("=========================================\n");
 
             try
             {
-                output_textbox.AppendText("Disabling the Windows firewall...");
+                output_textbox.AppendText(Properties.Language.strings.DISABLE_OUTPUT1 + "\n");
                 string sysCmd = "/C netsh advfirewall set allprofiles state off";
                 System.Diagnostics.Process.Start("CMD.exe", sysCmd);
                 output_textbox.AppendText("\n");
@@ -305,7 +319,7 @@ namespace Squad_Troubleshooter
             }
             finally
             {
-                output_textbox.AppendText("Firewall Disabled\n");
+                output_textbox.AppendText(Properties.Language.strings.DISABLE_OUTPUT2 + "\n");
             }
         }
 
@@ -313,12 +327,12 @@ namespace Squad_Troubleshooter
         private void enableBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
-            output_textbox.AppendText("Enable Windows Firewall\n");
+            output_textbox.AppendText(Properties.Language.strings.ENABLE_FIREWALL_BUTTON + "\n");
             output_textbox.AppendText("=========================================\n");
 
             try
             {
-                output_textbox.AppendText("Enabling the Windows firewall...");
+                output_textbox.AppendText(Properties.Language.strings.ENABLE_OUTPUT1 + "\n");
                 string sysCmd = "/C netsh advfirewall set allprofiles state on";
                 System.Diagnostics.Process.Start("CMD.exe", sysCmd);
                 output_textbox.AppendText("\n");
@@ -330,7 +344,7 @@ namespace Squad_Troubleshooter
             }
             finally
             {
-                output_textbox.AppendText("Firewall Enabled\n");
+                output_textbox.AppendText(Properties.Language.strings.ENABLE_OUTPUT2 + "\n");
             }
         }
 
@@ -338,16 +352,224 @@ namespace Squad_Troubleshooter
         private void getHelpBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
-            output_textbox.AppendText("Get help with game crashing on Server Browser\n");
+            output_textbox.AppendText(Properties.Language.strings.SERVER_BROWSER_BUTTON + "\n");
             output_textbox.AppendText("=========================================\n");
 
-            output_textbox.AppendText("If you are experiancing game crashes when using the Server Browser in game copy the following URL and visit the forums: \n");
-            output_textbox.AppendText("http://goo.gl/yvTOfS \n");
+            output_textbox.AppendText(Properties.Language.strings.GET_HELP_OUTPUT1 + "\n");
+            output_textbox.AppendText(Properties.Language.strings.GET_HELP_OUTPUT2 + "\n");
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void switchLanguage()
+        {
+            if (SELECTED_LANGUAGE == "ENGLISH")
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
+            }
+            else if (SELECTED_LANGUAGE == "GERMAN")
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("de-DE");
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("de-DE");
+            }
+            else if (SELECTED_LANGUAGE == "POLISH")
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("pl-PL");
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("pl-PL");
+            }
+            else if (SELECTED_LANGUAGE == "FRENCH")
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("fr-FR");
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("fr-FR");
+            }
+            else if (SELECTED_LANGUAGE == "CHINESE")
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("zh-CN");
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("zh-CN");
+            }
+            else if (SELECTED_LANGUAGE == "RUSSIAN")
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("ru-RU");
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("ru-RU");
+            }
+            else if (SELECTED_LANGUAGE == "SWEDISH")
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("sv-SE");
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("sv-SE");
+            }
+            else if (SELECTED_LANGUAGE == "DUTCH")
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("nl-NL");
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("nl-NL");
+            }
+            else if (SELECTED_LANGUAGE == "SPANISH")
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("es-ES");
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("es-ES");
+            }
+
+            //MessageBox.Show(Properties.Language.strings.APP_TITLE);
+            fileToolStripMenuItem.Text = Properties.Language.strings.FILE_MENU_PARENT;
+            exitToolStripMenuItem.Text = Properties.Language.strings.FILE_MENU_EXIT;
+
+            languagesToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_PARENT;
+            englishToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_ENGLISH;
+            spanishToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_SPANISH;
+            chineseToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_CHINESE;
+            dutchToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_DUTCH;
+            frenchToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_FRENCH;
+            germanToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_GERMAN;
+            polishToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_POLISH;
+            russianToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_RUSSIAN;
+            swedishToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_SWEDISH;
+
+            nukeBtn.Text = Properties.Language.strings.NUKE_BUTTON;
+            copyBtn.Text = Properties.Language.strings.LOGS_BUTTON;
+            generateBtn.Text = Properties.Language.strings.GENERATE_BUTTON;
+            reinstallBtn.Text = Properties.Language.strings.EAC_BUTTON;
+            installBtn.Text = Properties.Language.strings.VCREDIST_BUTTON;
+            disableBtn.Text = Properties.Language.strings.DISABLE_FIREWALL_BUTTON;
+            enableBtn.Text = Properties.Language.strings.ENABLE_FIREWALL_BUTTON;
+            getHelpBtn.Text = Properties.Language.strings.SERVER_BROWSER_BUTTON;
+        }
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            englishToolStripMenuItem.Checked = true;
+            spanishToolStripMenuItem.Checked = false;
+            germanToolStripMenuItem.Checked = false;
+            polishToolStripMenuItem.Checked = false;
+            frenchToolStripMenuItem.Checked = false;
+            chineseToolStripMenuItem.Checked = false;
+            russianToolStripMenuItem.Checked = false;
+            swedishToolStripMenuItem.Checked = false;
+            dutchToolStripMenuItem.Checked = false;
+            SELECTED_LANGUAGE = "ENGLISH";
+            switchLanguage();
+        }
+
+        private void germanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            englishToolStripMenuItem.Checked = false;
+            spanishToolStripMenuItem.Checked = false;
+            germanToolStripMenuItem.Checked = true;
+            polishToolStripMenuItem.Checked = false;
+            frenchToolStripMenuItem.Checked = false;
+            chineseToolStripMenuItem.Checked = false;
+            russianToolStripMenuItem.Checked = false;
+            swedishToolStripMenuItem.Checked = false;
+            dutchToolStripMenuItem.Checked = false;
+            SELECTED_LANGUAGE = "GERMAN";
+            switchLanguage();
+        }
+
+        private void polishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            englishToolStripMenuItem.Checked = false;
+            spanishToolStripMenuItem.Checked = false;
+            germanToolStripMenuItem.Checked = false;
+            polishToolStripMenuItem.Checked = true;
+            frenchToolStripMenuItem.Checked = false;
+            chineseToolStripMenuItem.Checked = false;
+            russianToolStripMenuItem.Checked = false;
+            swedishToolStripMenuItem.Checked = false;
+            dutchToolStripMenuItem.Checked = false;
+            SELECTED_LANGUAGE = "POLISH";
+            switchLanguage();
+        }
+
+        private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            englishToolStripMenuItem.Checked = false;
+            spanishToolStripMenuItem.Checked = false;
+            germanToolStripMenuItem.Checked = false;
+            polishToolStripMenuItem.Checked = false;
+            frenchToolStripMenuItem.Checked = true;
+            chineseToolStripMenuItem.Checked = false;
+            russianToolStripMenuItem.Checked = false;
+            swedishToolStripMenuItem.Checked = false;
+            dutchToolStripMenuItem.Checked = false;
+            SELECTED_LANGUAGE = "FRENCH";
+            switchLanguage();
+        }
+
+        private void chineseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            englishToolStripMenuItem.Checked = false;
+            spanishToolStripMenuItem.Checked = false;
+            germanToolStripMenuItem.Checked = false;
+            polishToolStripMenuItem.Checked = false;
+            frenchToolStripMenuItem.Checked = false;
+            chineseToolStripMenuItem.Checked = true;
+            russianToolStripMenuItem.Checked = false;
+            swedishToolStripMenuItem.Checked = false;
+            dutchToolStripMenuItem.Checked = false;
+            SELECTED_LANGUAGE = "CHINESE";
+            switchLanguage();
+        }
+
+        private void russianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            englishToolStripMenuItem.Checked = false;
+            spanishToolStripMenuItem.Checked = false;
+            germanToolStripMenuItem.Checked = false;
+            polishToolStripMenuItem.Checked = false;
+            frenchToolStripMenuItem.Checked = false;
+            chineseToolStripMenuItem.Checked = false;
+            russianToolStripMenuItem.Checked = true;
+            swedishToolStripMenuItem.Checked = false;
+            dutchToolStripMenuItem.Checked = false;
+            SELECTED_LANGUAGE = "RUSSIAN";
+            switchLanguage();
+        }
+
+        private void swedishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            englishToolStripMenuItem.Checked = false;
+            spanishToolStripMenuItem.Checked = false;
+            germanToolStripMenuItem.Checked = false;
+            polishToolStripMenuItem.Checked = false;
+            frenchToolStripMenuItem.Checked = false;
+            chineseToolStripMenuItem.Checked = false;
+            russianToolStripMenuItem.Checked = false;
+            swedishToolStripMenuItem.Checked = true;
+            dutchToolStripMenuItem.Checked = false;
+            SELECTED_LANGUAGE = "SWEDISH";
+            switchLanguage();
+        }
+
+        private void dutchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            englishToolStripMenuItem.Checked = false;
+            spanishToolStripMenuItem.Checked = false;
+            germanToolStripMenuItem.Checked = false;
+            polishToolStripMenuItem.Checked = false;
+            frenchToolStripMenuItem.Checked = false;
+            chineseToolStripMenuItem.Checked = false;
+            russianToolStripMenuItem.Checked = false;
+            swedishToolStripMenuItem.Checked = false;
+            dutchToolStripMenuItem.Checked = true;
+            SELECTED_LANGUAGE = "DUTCH";
+            switchLanguage();
+        }
+
+        private void spanishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            englishToolStripMenuItem.Checked = false;
+            spanishToolStripMenuItem.Checked = true;
+            germanToolStripMenuItem.Checked = false;
+            polishToolStripMenuItem.Checked = false;
+            frenchToolStripMenuItem.Checked = false;
+            chineseToolStripMenuItem.Checked = false;
+            russianToolStripMenuItem.Checked = false;
+            swedishToolStripMenuItem.Checked = false;
+            dutchToolStripMenuItem.Checked = false;
+            SELECTED_LANGUAGE = "SPANISH";
+            switchLanguage();
         }
     }
 }
