@@ -41,15 +41,6 @@ namespace Squad_Troubleshooter
             try
             {
                 System.IO.Directory.Delete(path, true);
-
-
-                //output_textbox.AppendText(path + "\n");
-                
-                // DEBUG STATEMENT : REMOVE WHEN COMPLETED
-                //output_textbox.AppendText(path);
-
-                //System.IO.Directory.Delete(path, true);
-                //System.IO.DirectoryInfo dir = new DirectoryInfo(path);
             }
             catch (IOException ie)
             {
