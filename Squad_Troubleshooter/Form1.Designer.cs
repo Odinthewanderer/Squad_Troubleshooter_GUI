@@ -38,102 +38,188 @@
             this.enableBtn = new System.Windows.Forms.Button();
             this.getHelpBtn = new System.Windows.Forms.Button();
             this.output_textbox = new System.Windows.Forms.RichTextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.languagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.germanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.polishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.frenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chineseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.swedishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dutchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spanishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.portugeseBrazilianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // nukeBtn
             // 
-            this.nukeBtn.Location = new System.Drawing.Point(181, 66);
+            resources.ApplyResources(this.nukeBtn, "nukeBtn");
             this.nukeBtn.Name = "nukeBtn";
-            this.nukeBtn.Size = new System.Drawing.Size(267, 23);
-            this.nukeBtn.TabIndex = 0;
-            this.nukeBtn.Text = "Nuke AppData Config Files";
             this.nukeBtn.UseVisualStyleBackColor = true;
             this.nukeBtn.Click += new System.EventHandler(this.nukeBtn_Click);
             // 
             // generateBtn
             // 
-            this.generateBtn.Location = new System.Drawing.Point(181, 95);
+            resources.ApplyResources(this.generateBtn, "generateBtn");
             this.generateBtn.Name = "generateBtn";
-            this.generateBtn.Size = new System.Drawing.Size(267, 23);
-            this.generateBtn.TabIndex = 1;
-            this.generateBtn.Text = "Generate Windows Event Log";
             this.generateBtn.UseVisualStyleBackColor = true;
             this.generateBtn.Click += new System.EventHandler(this.generateBtn_Click);
             // 
             // reinstallBtn
             // 
-            this.reinstallBtn.Location = new System.Drawing.Point(181, 124);
+            resources.ApplyResources(this.reinstallBtn, "reinstallBtn");
             this.reinstallBtn.Name = "reinstallBtn";
-            this.reinstallBtn.Size = new System.Drawing.Size(267, 23);
-            this.reinstallBtn.TabIndex = 2;
-            this.reinstallBtn.Text = "Re-install Easy Anti-Cheat (EAC)";
             this.reinstallBtn.UseVisualStyleBackColor = true;
             this.reinstallBtn.Click += new System.EventHandler(this.reinstallBtn_Click);
             // 
             // copyBtn
             // 
-            this.copyBtn.Location = new System.Drawing.Point(181, 153);
+            resources.ApplyResources(this.copyBtn, "copyBtn");
             this.copyBtn.Name = "copyBtn";
-            this.copyBtn.Size = new System.Drawing.Size(267, 23);
-            this.copyBtn.TabIndex = 3;
-            this.copyBtn.Text = "Copy Squad Logs to Desktop";
             this.copyBtn.UseVisualStyleBackColor = true;
             this.copyBtn.Click += new System.EventHandler(this.copyBtn_Click);
             // 
             // installBtn
             // 
-            this.installBtn.Location = new System.Drawing.Point(181, 182);
+            resources.ApplyResources(this.installBtn, "installBtn");
             this.installBtn.Name = "installBtn";
-            this.installBtn.Size = new System.Drawing.Size(267, 23);
-            this.installBtn.TabIndex = 4;
-            this.installBtn.Text = "Install VC Redistributable 2013 + 2015";
             this.installBtn.UseVisualStyleBackColor = true;
             this.installBtn.Click += new System.EventHandler(this.installBtn_Click);
             // 
             // disableBtn
             // 
-            this.disableBtn.Location = new System.Drawing.Point(181, 211);
+            resources.ApplyResources(this.disableBtn, "disableBtn");
             this.disableBtn.Name = "disableBtn";
-            this.disableBtn.Size = new System.Drawing.Size(267, 23);
-            this.disableBtn.TabIndex = 5;
-            this.disableBtn.Text = "Disable Windows Firewall";
             this.disableBtn.UseVisualStyleBackColor = true;
             this.disableBtn.Click += new System.EventHandler(this.disableBtn_Click);
             // 
             // enableBtn
             // 
-            this.enableBtn.Location = new System.Drawing.Point(181, 240);
+            resources.ApplyResources(this.enableBtn, "enableBtn");
             this.enableBtn.Name = "enableBtn";
-            this.enableBtn.Size = new System.Drawing.Size(267, 23);
-            this.enableBtn.TabIndex = 6;
-            this.enableBtn.Text = "Enable Windows Firewall";
             this.enableBtn.UseVisualStyleBackColor = true;
             this.enableBtn.Click += new System.EventHandler(this.enableBtn_Click);
             // 
             // getHelpBtn
             // 
-            this.getHelpBtn.Location = new System.Drawing.Point(181, 269);
+            resources.ApplyResources(this.getHelpBtn, "getHelpBtn");
             this.getHelpBtn.Name = "getHelpBtn";
-            this.getHelpBtn.Size = new System.Drawing.Size(267, 23);
-            this.getHelpBtn.TabIndex = 7;
-            this.getHelpBtn.Text = "Get help with game crashing on server browser";
             this.getHelpBtn.UseVisualStyleBackColor = true;
             this.getHelpBtn.Click += new System.EventHandler(this.getHelpBtn_Click);
             // 
             // output_textbox
             // 
-            this.output_textbox.Location = new System.Drawing.Point(12, 323);
+            resources.ApplyResources(this.output_textbox, "output_textbox");
             this.output_textbox.Name = "output_textbox";
             this.output_textbox.ReadOnly = true;
-            this.output_textbox.Size = new System.Drawing.Size(583, 310);
-            this.output_textbox.TabIndex = 8;
-            this.output_textbox.Text = "";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.languagesToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // languagesToolStripMenuItem
+            // 
+            this.languagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.germanToolStripMenuItem,
+            this.polishToolStripMenuItem,
+            this.frenchToolStripMenuItem,
+            this.chineseToolStripMenuItem,
+            this.russianToolStripMenuItem,
+            this.swedishToolStripMenuItem,
+            this.dutchToolStripMenuItem,
+            this.spanishToolStripMenuItem,
+            this.portugeseBrazilianToolStripMenuItem});
+            this.languagesToolStripMenuItem.Name = "languagesToolStripMenuItem";
+            resources.ApplyResources(this.languagesToolStripMenuItem, "languagesToolStripMenuItem");
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Checked = true;
+            this.englishToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // germanToolStripMenuItem
+            // 
+            this.germanToolStripMenuItem.Name = "germanToolStripMenuItem";
+            resources.ApplyResources(this.germanToolStripMenuItem, "germanToolStripMenuItem");
+            this.germanToolStripMenuItem.Click += new System.EventHandler(this.germanToolStripMenuItem_Click);
+            // 
+            // polishToolStripMenuItem
+            // 
+            this.polishToolStripMenuItem.Name = "polishToolStripMenuItem";
+            resources.ApplyResources(this.polishToolStripMenuItem, "polishToolStripMenuItem");
+            this.polishToolStripMenuItem.Click += new System.EventHandler(this.polishToolStripMenuItem_Click);
+            // 
+            // frenchToolStripMenuItem
+            // 
+            this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
+            resources.ApplyResources(this.frenchToolStripMenuItem, "frenchToolStripMenuItem");
+            this.frenchToolStripMenuItem.Click += new System.EventHandler(this.frenchToolStripMenuItem_Click);
+            // 
+            // chineseToolStripMenuItem
+            // 
+            this.chineseToolStripMenuItem.Name = "chineseToolStripMenuItem";
+            resources.ApplyResources(this.chineseToolStripMenuItem, "chineseToolStripMenuItem");
+            this.chineseToolStripMenuItem.Click += new System.EventHandler(this.chineseToolStripMenuItem_Click);
+            // 
+            // russianToolStripMenuItem
+            // 
+            this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
+            resources.ApplyResources(this.russianToolStripMenuItem, "russianToolStripMenuItem");
+            this.russianToolStripMenuItem.Click += new System.EventHandler(this.russianToolStripMenuItem_Click);
+            // 
+            // swedishToolStripMenuItem
+            // 
+            this.swedishToolStripMenuItem.Name = "swedishToolStripMenuItem";
+            resources.ApplyResources(this.swedishToolStripMenuItem, "swedishToolStripMenuItem");
+            this.swedishToolStripMenuItem.Click += new System.EventHandler(this.swedishToolStripMenuItem_Click);
+            // 
+            // dutchToolStripMenuItem
+            // 
+            this.dutchToolStripMenuItem.Name = "dutchToolStripMenuItem";
+            resources.ApplyResources(this.dutchToolStripMenuItem, "dutchToolStripMenuItem");
+            this.dutchToolStripMenuItem.Click += new System.EventHandler(this.dutchToolStripMenuItem_Click);
+            // 
+            // spanishToolStripMenuItem
+            // 
+            this.spanishToolStripMenuItem.Name = "spanishToolStripMenuItem";
+            resources.ApplyResources(this.spanishToolStripMenuItem, "spanishToolStripMenuItem");
+            this.spanishToolStripMenuItem.Click += new System.EventHandler(this.spanishToolStripMenuItem_Click);
+            // 
+            // portugeseBrazilianToolStripMenuItem
+            // 
+            this.portugeseBrazilianToolStripMenuItem.Name = "portugeseBrazilianToolStripMenuItem";
+            resources.ApplyResources(this.portugeseBrazilianToolStripMenuItem, "portugeseBrazilianToolStripMenuItem");
+            this.portugeseBrazilianToolStripMenuItem.Click += new System.EventHandler(this.portugeseBrazilianToolStripMenuItem_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 637);
             this.Controls.Add(this.output_textbox);
             this.Controls.Add(this.getHelpBtn);
             this.Controls.Add(this.enableBtn);
@@ -143,13 +229,16 @@
             this.Controls.Add(this.reinstallBtn);
             this.Controls.Add(this.generateBtn);
             this.Controls.Add(this.nukeBtn);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "SuicidalChair\'s Improved Squad Troubleshooter";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -164,6 +253,20 @@
         private System.Windows.Forms.Button enableBtn;
         private System.Windows.Forms.Button getHelpBtn;
         private System.Windows.Forms.RichTextBox output_textbox;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem languagesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem germanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem polishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem frenchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chineseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem russianToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem swedishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dutchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spanishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem portugeseBrazilianToolStripMenuItem;
     }
 }
 
