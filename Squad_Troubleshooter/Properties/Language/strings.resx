@@ -222,6 +222,9 @@
   <data name="LANGUAGES_MENU_POLISH" xml:space="preserve">
     <value>Polish</value>
   </data>
+  <data name="LANGUAGES_MENU_PORTUGUESE_BRAZILIAN" xml:space="preserve">
+    <value>Portuguese - Brazilian</value>
+  </data>
   <data name="LANGUAGES_MENU_RUSSIAN" xml:space="preserve">
     <value>Russian</value>
   </data>

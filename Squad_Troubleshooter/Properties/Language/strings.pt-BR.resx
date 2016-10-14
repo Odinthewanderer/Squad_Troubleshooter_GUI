@@ -118,153 +118,153 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="APP_TITLE" xml:space="preserve">
-    <value>Состав Troubleshooter</value>
+    <value>Squad Troubleshooter</value>
   </data>
   <data name="COPY_OUTPUT1" xml:space="preserve">
-    <value>Копировать команды журналы на рабочий стол</value>
+    <value>Cópia do pelotão registra para o Desktop</value>
   </data>
   <data name="COPY_OUTPUT2" xml:space="preserve">
-    <value>Копирование ...</value>
+    <value>A copiar ...</value>
   </data>
   <data name="COPY_OUTPUT3" xml:space="preserve">
-    <value>Скопируйте Complete!</value>
+    <value>Cópia completa!</value>
   </data>
   <data name="DISABLE_FIREWALL_BUTTON" xml:space="preserve">
-    <value>Отключить брандмауэр Windows</value>
+    <value>Desativar o Firewall do Windows</value>
   </data>
   <data name="DISABLE_OUTPUT1" xml:space="preserve">
-    <value>Отключение брандмауэра Windows, ...</value>
+    <value>Desativar o firewall do Windows ...</value>
   </data>
   <data name="DISABLE_OUTPUT2" xml:space="preserve">
-    <value>Брандмауэр для инвалидов</value>
+    <value>Firewall pessoas com mobilidade condicionada</value>
   </data>
   <data name="EAC_BUTTON" xml:space="preserve">
-    <value>Переустановка Easy Anti-Cheat (EAC)</value>
+    <value>Reinstalar Fácil Anti-Cheat (EAC)</value>
   </data>
   <data name="ENABLE_FIREWALL_BUTTON" xml:space="preserve">
-    <value>Включить брандмауэр Windows</value>
+    <value>Ativar o Firewall do Windows</value>
   </data>
   <data name="ENABLE_OUTPUT1" xml:space="preserve">
-    <value>Включение брандмауэра Windows ...</value>
+    <value>Permitindo que o firewall do Windows ...</value>
   </data>
   <data name="ENABLE_OUTPUT2" xml:space="preserve">
-    <value>Брандмауэр Включено</value>
+    <value>Firewall ativado</value>
   </data>
   <data name="FILE_MENU_EXIT" xml:space="preserve">
-    <value>Выход</value>
+    <value>Saída</value>
   </data>
   <data name="FILE_MENU_PARENT" xml:space="preserve">
-    <value>файл</value>
+    <value>Arquivo</value>
   </data>
   <data name="GENERATE_BUTTON" xml:space="preserve">
-    <value>Создать журнал событий Windows</value>
+    <value>Gerar Log de Eventos do Windows</value>
   </data>
   <data name="GENERATING_OUTPUT1" xml:space="preserve">
-    <value>Создание лог-файлов ...</value>
+    <value>Gerar arquivos de log ...</value>
   </data>
   <data name="GENERATING_OUTPUT2" xml:space="preserve">
-    <value>Файлы журналов были получены и в настоящее время на рабочем столе</value>
+    <value>Arquivos de log foram gerados e estão agora em seu desktop</value>
   </data>
   <data name="GENERATING_OUTPUT3" xml:space="preserve">
-    <value>Журнал сохраняется как</value>
+    <value>Log é salvo como</value>
   </data>
   <data name="GENERATING_OUTPUT4" xml:space="preserve">
-    <value>Пожалуйста, присылайте все файлы журнала support@joinsquad.com</value>
+    <value>Por favor, envie todos os arquivos de log para support@joinsquad.com</value>
   </data>
   <data name="GET_HELP_OUTPUT1" xml:space="preserve">
-    <value>Если вы experiancing игра вылетает при использовании браузера сервера в игре скопируйте следующий URL и посетить форумы:</value>
+    <value>Se você está experiancing jogo trava ao utilizar o browser de servidor no jogo de copiar o seguinte URL e visitar os fóruns:</value>
   </data>
   <data name="GET_HELP_OUTPUT2" xml:space="preserve">
     <value>http://goo.gl/yvTOfS</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_ERROR_OUTPUT1" xml:space="preserve">
-    <value>Нет двоичные файлы для vc_redist.x64.exe (2013) ...</value>
+    <value>Não binários para vc_redist.x64.exe (2013) ...</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_ERROR_OUTPUT2" xml:space="preserve">
-    <value>Пропуск vc_redist.x64.exe (2013) установить ...</value>
+    <value>Ignorando vc_redist.x64.exe (2013) instalar ...</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_OUTPUT1" xml:space="preserve">
-    <value>Установка vc_redist.x64.exe (2013) ...</value>
+    <value>Instalando vc_redist.x64.exe (2013) ...</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_OUTPUT2" xml:space="preserve">
-    <value>VC Redistributable (2013) установка завершена</value>
+    <value>VC Redistributable (2013) completo instalação</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_ERROR_OUTPUT1" xml:space="preserve">
-    <value>Нет двоичные файлы для vc_redist.x64.exe (2015) ...</value>
+    <value>Não binários para vc_redist.x64.exe (2015) ...</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_ERROR_OUTPUT2" xml:space="preserve">
-    <value>Пропуск vc_redist.x64.exe (2015) установить ...</value>
+    <value>Ignorando vc_redist.x64.exe (2015) instalar ...</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_OUTPUT1" xml:space="preserve">
-    <value>Установка vc_redist.x64.exe (2015) ...</value>
+    <value>Instalando vc_redist.x64.exe (2015) ...</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_OUTPUT2" xml:space="preserve">
-    <value>VC Redistributable (2015) установка завершена</value>
+    <value>VC Redistributable (2015) completo instalação</value>
   </data>
   <data name="LANGUAGES_MENU_CHINESE" xml:space="preserve">
-    <value>Китайский</value>
+    <value>Chinês</value>
   </data>
   <data name="LANGUAGES_MENU_DUTCH" xml:space="preserve">
-    <value>Голландский</value>
+    <value>Holandês</value>
   </data>
   <data name="LANGUAGES_MENU_ENGLISH" xml:space="preserve">
-    <value>английский</value>
+    <value>Inglês</value>
   </data>
   <data name="LANGUAGES_MENU_FRENCH" xml:space="preserve">
-    <value>Французский</value>
+    <value>Francês</value>
   </data>
   <data name="LANGUAGES_MENU_GERMAN" xml:space="preserve">
-    <value>Немецкий</value>
+    <value>Alemão</value>
   </data>
   <data name="LANGUAGES_MENU_PARENT" xml:space="preserve">
-    <value>Языки</value>
+    <value>Idiomas</value>
   </data>
   <data name="LANGUAGES_MENU_POLISH" xml:space="preserve">
-    <value>полировать</value>
+    <value>Polonês</value>
   </data>
   <data name="LANGUAGES_MENU_PORTUGUESE_BRAZILIAN" xml:space="preserve">
-    <value>Португальский - Бразильский</value>
+    <value>Português - Brasil</value>
   </data>
   <data name="LANGUAGES_MENU_RUSSIAN" xml:space="preserve">
-    <value>русский</value>
+    <value>Russo</value>
   </data>
   <data name="LANGUAGES_MENU_SPANISH" xml:space="preserve">
-    <value>испанский</value>
+    <value>Espanhol</value>
   </data>
   <data name="LANGUAGES_MENU_SWEDISH" xml:space="preserve">
-    <value>шведский</value>
+    <value>Sueco</value>
   </data>
   <data name="LOGS_BUTTON" xml:space="preserve">
-    <value>Копировать команды Журналы на рабочий стол</value>
+    <value>Cópia do pelotão Logs para o Desktop</value>
   </data>
   <data name="NUKE_BUTTON" xml:space="preserve">
-    <value>Nuke AppData Config Files</value>
+    <value>Excluir AppData Arquivos de configuração</value>
   </data>
   <data name="NUKE_OUTPUT1" xml:space="preserve">
-    <value>каталог AppData</value>
+    <value>Diretório AppData</value>
   </data>
   <data name="NUKE_OUTPUT2" xml:space="preserve">
-    <value>успешно сбросили атомную бомбу</value>
+    <value>Foi nukado com sucesso</value>
   </data>
   <data name="REINSTALL_ERROR_OUTPUT1" xml:space="preserve">
-    <value>Нет двоичные файлы для EasyAntiCheat_Setup.exe ...</value>
+    <value>Não binários para EasyAntiCheat_Setup.exe ...</value>
   </data>
   <data name="REINSTALL_ERROR_OUTPUT2" xml:space="preserve">
-    <value>Пропустив EasyAntiCheat_Setup.exe установить ...</value>
+    <value>Ignorando instalar EasyAntiCheat_Setup.exe ...</value>
   </data>
   <data name="REINSTALL_OUTPUT1" xml:space="preserve">
-    <value>Установка EasyAntiCheat_Setup.exe ...</value>
+    <value>Instalando EasyAntiCheat_Setup.exe ...</value>
   </data>
   <data name="REINSTALL_OUTPUT2" xml:space="preserve">
-    <value>EAC установка завершена</value>
+    <value>completa instalação EAC</value>
   </data>
   <data name="SERVER_BROWSER_BUTTON" xml:space="preserve">
-    <value>Получить помощь с игрой сбой на сервере браузера</value>
+    <value>Obter ajuda com o jogo de bater no navegador servidor</value>
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
-    <value>Что-то пошло не так...</value>
+    <value>Algo deu errado ...</value>
   </data>
   <data name="VCREDIST_BUTTON" xml:space="preserve">
-    <value>Установить VC Redistributable 2013 + 2015</value>
+    <value>Instale VC Redistributable 2013 + 2015</value>
   </data>
 </root>

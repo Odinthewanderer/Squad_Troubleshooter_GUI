@@ -51,6 +51,7 @@
             this.swedishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dutchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spanishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.portugeseBrazilianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,7 +149,8 @@
             this.russianToolStripMenuItem,
             this.swedishToolStripMenuItem,
             this.dutchToolStripMenuItem,
-            this.spanishToolStripMenuItem});
+            this.spanishToolStripMenuItem,
+            this.portugeseBrazilianToolStripMenuItem});
             this.languagesToolStripMenuItem.Name = "languagesToolStripMenuItem";
             resources.ApplyResources(this.languagesToolStripMenuItem, "languagesToolStripMenuItem");
             // 
@@ -208,6 +210,12 @@
             resources.ApplyResources(this.spanishToolStripMenuItem, "spanishToolStripMenuItem");
             this.spanishToolStripMenuItem.Click += new System.EventHandler(this.spanishToolStripMenuItem_Click);
             // 
+            // portugeseBrazilianToolStripMenuItem
+            // 
+            this.portugeseBrazilianToolStripMenuItem.Name = "portugeseBrazilianToolStripMenuItem";
+            resources.ApplyResources(this.portugeseBrazilianToolStripMenuItem, "portugeseBrazilianToolStripMenuItem");
+            this.portugeseBrazilianToolStripMenuItem.Click += new System.EventHandler(this.portugeseBrazilianToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -258,6 +266,7 @@
         private System.Windows.Forms.ToolStripMenuItem swedishToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dutchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem spanishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem portugeseBrazilianToolStripMenuItem;
     }
 }
 

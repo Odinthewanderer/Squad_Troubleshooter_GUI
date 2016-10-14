@@ -47,3 +47,6 @@ C:\Developer\Personal\Squad_Troubleshooter\Squad_Troubleshooter_GUI\Squad_Troubl
 C:\Developer\Personal\Squad_Troubleshooter\Squad_Troubleshooter_GUI\Squad_Troubleshooter\obj\Debug\Squad_Troubleshooter.Properties.Language.strings.de-DE.resources
 C:\Developer\Personal\Squad_Troubleshooter\Squad_Troubleshooter_GUI\Squad_Troubleshooter\obj\Debug\de-DE\Squad_Troubleshooter.resources.dll
 C:\Developer\Personal\Squad_Troubleshooter\Squad_Troubleshooter_GUI\Squad_Troubleshooter\obj\Debug\Squad_Troubleshooter.csprojResolveAssemblyReference.cache
+C:\Developer\Personal\Squad_Troubleshooter\Squad_Troubleshooter_GUI\Squad_Troubleshooter\bin\Debug\pt-BR\Squad_Troubleshooter.resources.dll
+C:\Developer\Personal\Squad_Troubleshooter\Squad_Troubleshooter_GUI\Squad_Troubleshooter\obj\Debug\Squad_Troubleshooter.Properties.Language.strings.pt-BR.resources
+C:\Developer\Personal\Squad_Troubleshooter\Squad_Troubleshooter_GUI\Squad_Troubleshooter\obj\Debug\pt-BR\Squad_Troubleshooter.resources.dll

@@ -376,6 +376,15 @@ namespace Squad_Troubleshooter.Properties.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Portuguese - Brazilian.
+        /// </summary>
+        internal static string LANGUAGES_MENU_PORTUGUESE_BRAZILIAN {
+            get {
+                return ResourceManager.GetString("LANGUAGES_MENU_PORTUGUESE_BRAZILIAN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Russian.
         /// </summary>
         internal static string LANGUAGES_MENU_RUSSIAN {

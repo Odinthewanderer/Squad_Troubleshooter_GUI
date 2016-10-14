@@ -63,6 +63,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Language\strings.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Language\strings.zh-CN.resx" />
     <EmbeddedResource Include="Properties\Language\strings.nl-NL.resx" />
     <EmbeddedResource Include="Properties\Language\strings.es-ES.resx" />

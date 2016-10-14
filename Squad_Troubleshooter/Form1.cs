@@ -411,6 +411,11 @@ namespace Squad_Troubleshooter
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("es-ES");
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("es-ES");
             }
+            else if (SELECTED_LANGUAGE == "PORTUGESE-BRAZILIAN")
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("pt-BR");
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("pt-BR");
+            }
 
             //MessageBox.Show(Properties.Language.strings.APP_TITLE);
             fileToolStripMenuItem.Text = Properties.Language.strings.FILE_MENU_PARENT;
@@ -426,6 +431,7 @@ namespace Squad_Troubleshooter
             polishToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_POLISH;
             russianToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_RUSSIAN;
             swedishToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_SWEDISH;
+            portugeseBrazilianToolStripMenuItem.Text = Properties.Language.strings.LANGUAGES_MENU_PORTUGUESE_BRAZILIAN;
 
             nukeBtn.Text = Properties.Language.strings.NUKE_BUTTON;
             copyBtn.Text = Properties.Language.strings.LOGS_BUTTON;
@@ -448,6 +454,7 @@ namespace Squad_Troubleshooter
             russianToolStripMenuItem.Checked = false;
             swedishToolStripMenuItem.Checked = false;
             dutchToolStripMenuItem.Checked = false;
+            portugeseBrazilianToolStripMenuItem.Checked = false;
             SELECTED_LANGUAGE = "ENGLISH";
             switchLanguage();
         }
@@ -463,6 +470,7 @@ namespace Squad_Troubleshooter
             russianToolStripMenuItem.Checked = false;
             swedishToolStripMenuItem.Checked = false;
             dutchToolStripMenuItem.Checked = false;
+            portugeseBrazilianToolStripMenuItem.Checked = false;
             SELECTED_LANGUAGE = "GERMAN";
             switchLanguage();
         }
@@ -478,6 +486,7 @@ namespace Squad_Troubleshooter
             russianToolStripMenuItem.Checked = false;
             swedishToolStripMenuItem.Checked = false;
             dutchToolStripMenuItem.Checked = false;
+            portugeseBrazilianToolStripMenuItem.Checked = false;
             SELECTED_LANGUAGE = "POLISH";
             switchLanguage();
         }
@@ -493,6 +502,7 @@ namespace Squad_Troubleshooter
             russianToolStripMenuItem.Checked = false;
             swedishToolStripMenuItem.Checked = false;
             dutchToolStripMenuItem.Checked = false;
+            portugeseBrazilianToolStripMenuItem.Checked = false;
             SELECTED_LANGUAGE = "FRENCH";
             switchLanguage();
         }
@@ -508,6 +518,7 @@ namespace Squad_Troubleshooter
             russianToolStripMenuItem.Checked = false;
             swedishToolStripMenuItem.Checked = false;
             dutchToolStripMenuItem.Checked = false;
+            portugeseBrazilianToolStripMenuItem.Checked = false;
             SELECTED_LANGUAGE = "CHINESE";
             switchLanguage();
         }
@@ -523,6 +534,7 @@ namespace Squad_Troubleshooter
             russianToolStripMenuItem.Checked = true;
             swedishToolStripMenuItem.Checked = false;
             dutchToolStripMenuItem.Checked = false;
+            portugeseBrazilianToolStripMenuItem.Checked = false;
             SELECTED_LANGUAGE = "RUSSIAN";
             switchLanguage();
         }
@@ -538,6 +550,7 @@ namespace Squad_Troubleshooter
             russianToolStripMenuItem.Checked = false;
             swedishToolStripMenuItem.Checked = true;
             dutchToolStripMenuItem.Checked = false;
+            portugeseBrazilianToolStripMenuItem.Checked = false;
             SELECTED_LANGUAGE = "SWEDISH";
             switchLanguage();
         }
@@ -553,6 +566,7 @@ namespace Squad_Troubleshooter
             russianToolStripMenuItem.Checked = false;
             swedishToolStripMenuItem.Checked = false;
             dutchToolStripMenuItem.Checked = true;
+            portugeseBrazilianToolStripMenuItem.Checked = false;
             SELECTED_LANGUAGE = "DUTCH";
             switchLanguage();
         }
@@ -568,7 +582,24 @@ namespace Squad_Troubleshooter
             russianToolStripMenuItem.Checked = false;
             swedishToolStripMenuItem.Checked = false;
             dutchToolStripMenuItem.Checked = false;
+            portugeseBrazilianToolStripMenuItem.Checked = false;
             SELECTED_LANGUAGE = "SPANISH";
+            switchLanguage();
+        }
+
+        private void portugeseBrazilianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            englishToolStripMenuItem.Checked = false;
+            spanishToolStripMenuItem.Checked = false;
+            germanToolStripMenuItem.Checked = false;
+            polishToolStripMenuItem.Checked = false;
+            frenchToolStripMenuItem.Checked = false;
+            chineseToolStripMenuItem.Checked = false;
+            russianToolStripMenuItem.Checked = false;
+            swedishToolStripMenuItem.Checked = false;
+            dutchToolStripMenuItem.Checked = false;
+            portugeseBrazilianToolStripMenuItem.Checked = true;
+            SELECTED_LANGUAGE = "PORTUGESE-BRAZILIAN";
             switchLanguage();
         }
     }

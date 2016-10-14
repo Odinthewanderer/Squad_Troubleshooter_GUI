@@ -163,7 +163,7 @@
     <value>Generera loggfiler ...</value>
   </data>
   <data name="GENERATING_OUTPUT2" xml:space="preserve">
-    <value>Har genererats Loggfiler och finns nu på skrivbordet</value>
+    <value>har genererats Loggfiler och finns nu på skrivbordet</value>
   </data>
   <data name="GENERATING_OUTPUT3" xml:space="preserve">
     <value>Loggen sparas som</value>
@@ -202,40 +202,43 @@
     <value>VC Vidaredistribuerbar (2015) installationen klar</value>
   </data>
   <data name="LANGUAGES_MENU_CHINESE" xml:space="preserve">
-    <value>Kinesisk</value>
+    <value>kinesisk</value>
   </data>
   <data name="LANGUAGES_MENU_DUTCH" xml:space="preserve">
-    <value>Holländska</value>
+    <value>holländska</value>
   </data>
   <data name="LANGUAGES_MENU_ENGLISH" xml:space="preserve">
     <value>Engelska</value>
   </data>
   <data name="LANGUAGES_MENU_FRENCH" xml:space="preserve">
-    <value>Franska</value>
+    <value>franska</value>
   </data>
   <data name="LANGUAGES_MENU_GERMAN" xml:space="preserve">
-    <value>Tysk</value>
+    <value>tysk</value>
   </data>
   <data name="LANGUAGES_MENU_PARENT" xml:space="preserve">
-    <value>Språk</value>
+    <value>språk</value>
   </data>
   <data name="LANGUAGES_MENU_POLISH" xml:space="preserve">
-    <value>Polska</value>
+    <value>polska</value>
+  </data>
+  <data name="LANGUAGES_MENU_PORTUGUESE_BRAZILIAN" xml:space="preserve">
+    <value>Portugisiska - brasiliansk</value>
   </data>
   <data name="LANGUAGES_MENU_RUSSIAN" xml:space="preserve">
-    <value>Ryska</value>
+    <value>ryska</value>
   </data>
   <data name="LANGUAGES_MENU_SPANISH" xml:space="preserve">
-    <value>Spansk</value>
+    <value>spansk</value>
   </data>
   <data name="LANGUAGES_MENU_SWEDISH" xml:space="preserve">
-    <value>Svenska</value>
+    <value>svenska</value>
   </data>
   <data name="LOGS_BUTTON" xml:space="preserve">
     <value>Kopiera Squad loggar till skrivbordet</value>
   </data>
   <data name="NUKE_BUTTON" xml:space="preserve">
-    <value>Radera AppData konfigurationsfiler</value>
+    <value>Nuke AppData Konfigurationsfiler</value>
   </data>
   <data name="NUKE_OUTPUT1" xml:space="preserve">
     <value>AppData katalog</value>
