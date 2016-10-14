@@ -238,7 +238,7 @@
     <value>Copy Squad Logs to Desktop</value>
   </data>
   <data name="NUKE_BUTTON" xml:space="preserve">
-    <value>Nuke AppData Config Files</value>
+    <value>Delete AppData Configuration Files</value>
   </data>
   <data name="NUKE_OUTPUT1" xml:space="preserve">
     <value>AppData directory</value>

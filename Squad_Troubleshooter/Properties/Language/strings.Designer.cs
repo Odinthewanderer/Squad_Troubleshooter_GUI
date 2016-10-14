@@ -421,7 +421,7 @@ namespace Squad_Troubleshooter.Properties.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nuke AppData Config Files.
+        ///   Looks up a localized string similar to Delete AppData Configuration Files.
         /// </summary>
         internal static string NUKE_BUTTON {
             get {

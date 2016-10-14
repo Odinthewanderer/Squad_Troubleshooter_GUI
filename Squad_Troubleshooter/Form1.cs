@@ -443,162 +443,81 @@ namespace Squad_Troubleshooter
             getHelpBtn.Text = Properties.Language.strings.SERVER_BROWSER_BUTTON;
         }
 
+        private void toggleChecked(object sender)
+        {
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
+            foreach(ToolStripMenuItem language in languagesToolStripMenuItem.DropDownItems)
+            {
+                language.Checked = language == item;
+            }
+        }
+
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            englishToolStripMenuItem.Checked = true;
-            spanishToolStripMenuItem.Checked = false;
-            germanToolStripMenuItem.Checked = false;
-            polishToolStripMenuItem.Checked = false;
-            frenchToolStripMenuItem.Checked = false;
-            chineseToolStripMenuItem.Checked = false;
-            russianToolStripMenuItem.Checked = false;
-            swedishToolStripMenuItem.Checked = false;
-            dutchToolStripMenuItem.Checked = false;
-            portugeseBrazilianToolStripMenuItem.Checked = false;
+            toggleChecked(englishToolStripMenuItem);
             SELECTED_LANGUAGE = "ENGLISH";
             switchLanguage();
         }
 
         private void germanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            englishToolStripMenuItem.Checked = false;
-            spanishToolStripMenuItem.Checked = false;
-            germanToolStripMenuItem.Checked = true;
-            polishToolStripMenuItem.Checked = false;
-            frenchToolStripMenuItem.Checked = false;
-            chineseToolStripMenuItem.Checked = false;
-            russianToolStripMenuItem.Checked = false;
-            swedishToolStripMenuItem.Checked = false;
-            dutchToolStripMenuItem.Checked = false;
-            portugeseBrazilianToolStripMenuItem.Checked = false;
+            toggleChecked(germanToolStripMenuItem);
             SELECTED_LANGUAGE = "GERMAN";
             switchLanguage();
         }
 
         private void polishToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            englishToolStripMenuItem.Checked = false;
-            spanishToolStripMenuItem.Checked = false;
-            germanToolStripMenuItem.Checked = false;
-            polishToolStripMenuItem.Checked = true;
-            frenchToolStripMenuItem.Checked = false;
-            chineseToolStripMenuItem.Checked = false;
-            russianToolStripMenuItem.Checked = false;
-            swedishToolStripMenuItem.Checked = false;
-            dutchToolStripMenuItem.Checked = false;
-            portugeseBrazilianToolStripMenuItem.Checked = false;
+            toggleChecked(polishToolStripMenuItem);
             SELECTED_LANGUAGE = "POLISH";
             switchLanguage();
         }
 
         private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            englishToolStripMenuItem.Checked = false;
-            spanishToolStripMenuItem.Checked = false;
-            germanToolStripMenuItem.Checked = false;
-            polishToolStripMenuItem.Checked = false;
-            frenchToolStripMenuItem.Checked = true;
-            chineseToolStripMenuItem.Checked = false;
-            russianToolStripMenuItem.Checked = false;
-            swedishToolStripMenuItem.Checked = false;
-            dutchToolStripMenuItem.Checked = false;
-            portugeseBrazilianToolStripMenuItem.Checked = false;
+            toggleChecked(frenchToolStripMenuItem);
             SELECTED_LANGUAGE = "FRENCH";
             switchLanguage();
         }
 
         private void chineseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            englishToolStripMenuItem.Checked = false;
-            spanishToolStripMenuItem.Checked = false;
-            germanToolStripMenuItem.Checked = false;
-            polishToolStripMenuItem.Checked = false;
-            frenchToolStripMenuItem.Checked = false;
-            chineseToolStripMenuItem.Checked = true;
-            russianToolStripMenuItem.Checked = false;
-            swedishToolStripMenuItem.Checked = false;
-            dutchToolStripMenuItem.Checked = false;
-            portugeseBrazilianToolStripMenuItem.Checked = false;
+            toggleChecked(chineseToolStripMenuItem);
             SELECTED_LANGUAGE = "CHINESE";
             switchLanguage();
         }
 
         private void russianToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            englishToolStripMenuItem.Checked = false;
-            spanishToolStripMenuItem.Checked = false;
-            germanToolStripMenuItem.Checked = false;
-            polishToolStripMenuItem.Checked = false;
-            frenchToolStripMenuItem.Checked = false;
-            chineseToolStripMenuItem.Checked = false;
-            russianToolStripMenuItem.Checked = true;
-            swedishToolStripMenuItem.Checked = false;
-            dutchToolStripMenuItem.Checked = false;
-            portugeseBrazilianToolStripMenuItem.Checked = false;
+            toggleChecked(russianToolStripMenuItem);
             SELECTED_LANGUAGE = "RUSSIAN";
             switchLanguage();
         }
 
         private void swedishToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            englishToolStripMenuItem.Checked = false;
-            spanishToolStripMenuItem.Checked = false;
-            germanToolStripMenuItem.Checked = false;
-            polishToolStripMenuItem.Checked = false;
-            frenchToolStripMenuItem.Checked = false;
-            chineseToolStripMenuItem.Checked = false;
-            russianToolStripMenuItem.Checked = false;
-            swedishToolStripMenuItem.Checked = true;
-            dutchToolStripMenuItem.Checked = false;
-            portugeseBrazilianToolStripMenuItem.Checked = false;
+            toggleChecked(swedishToolStripMenuItem);
             SELECTED_LANGUAGE = "SWEDISH";
             switchLanguage();
         }
 
         private void dutchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            englishToolStripMenuItem.Checked = false;
-            spanishToolStripMenuItem.Checked = false;
-            germanToolStripMenuItem.Checked = false;
-            polishToolStripMenuItem.Checked = false;
-            frenchToolStripMenuItem.Checked = false;
-            chineseToolStripMenuItem.Checked = false;
-            russianToolStripMenuItem.Checked = false;
-            swedishToolStripMenuItem.Checked = false;
-            dutchToolStripMenuItem.Checked = true;
-            portugeseBrazilianToolStripMenuItem.Checked = false;
+            toggleChecked(dutchToolStripMenuItem);
             SELECTED_LANGUAGE = "DUTCH";
             switchLanguage();
         }
 
         private void spanishToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            englishToolStripMenuItem.Checked = false;
-            spanishToolStripMenuItem.Checked = true;
-            germanToolStripMenuItem.Checked = false;
-            polishToolStripMenuItem.Checked = false;
-            frenchToolStripMenuItem.Checked = false;
-            chineseToolStripMenuItem.Checked = false;
-            russianToolStripMenuItem.Checked = false;
-            swedishToolStripMenuItem.Checked = false;
-            dutchToolStripMenuItem.Checked = false;
-            portugeseBrazilianToolStripMenuItem.Checked = false;
+            toggleChecked(spanishToolStripMenuItem);
             SELECTED_LANGUAGE = "SPANISH";
             switchLanguage();
         }
 
         private void portugeseBrazilianToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            englishToolStripMenuItem.Checked = false;
-            spanishToolStripMenuItem.Checked = false;
-            germanToolStripMenuItem.Checked = false;
-            polishToolStripMenuItem.Checked = false;
-            frenchToolStripMenuItem.Checked = false;
-            chineseToolStripMenuItem.Checked = false;
-            russianToolStripMenuItem.Checked = false;
-            swedishToolStripMenuItem.Checked = false;
-            dutchToolStripMenuItem.Checked = false;
-            portugeseBrazilianToolStripMenuItem.Checked = true;
+            toggleChecked(portugeseBrazilianToolStripMenuItem);
             SELECTED_LANGUAGE = "PORTUGESE-BRAZILIAN";
             switchLanguage();
         }
