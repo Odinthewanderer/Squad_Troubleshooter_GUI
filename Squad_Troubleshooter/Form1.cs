@@ -344,5 +344,10 @@ namespace Squad_Troubleshooter
             output_textbox.AppendText("If you are experiancing game crashes when using the Server Browser in game copy the following URL and visit the forums: \n");
             output_textbox.AppendText("http://goo.gl/yvTOfS \n");
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }
