@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Microsoft.Win32;
+using System.Security.Permissions;
 
 
 namespace Squad_Troubleshooter
@@ -38,11 +40,16 @@ namespace Squad_Troubleshooter
 
             try
             {
+                System.IO.Directory.Delete(path, true);
+
+
+                //output_textbox.AppendText(path + "\n");
+                
                 // DEBUG STATEMENT : REMOVE WHEN COMPLETED
                 //output_textbox.AppendText(path);
 
                 //System.IO.Directory.Delete(path, true);
-                System.IO.DirectoryInfo di = new DirectoryInfo(path);
+                //System.IO.DirectoryInfo dir = new DirectoryInfo(path);
             }
             catch (IOException ie)
             {
@@ -52,7 +59,6 @@ namespace Squad_Troubleshooter
             finally
             {
                 output_textbox.AppendText("AppData directory ( " + path + " ) has been successfully nuked!");
-
             }
         }
 
@@ -67,9 +73,6 @@ namespace Squad_Troubleshooter
 
             string strCmdText;
             strCmdText = "/C wevtutil epl Application \"%userprofile%\\Desktop\\SQUADEventLogs.evtx\"";
-
-            // DEBUG STATEMENT : REMOVE WHEN COMPLETE
-            //output_textbox.AppendText(strCmdText);
 
             output_textbox.AppendText("Generating log files...\n");
             try
@@ -93,24 +96,7 @@ namespace Squad_Troubleshooter
         // Launches the EasyAntiCheat installer in the Squad install directory, make sure you pick squad as your game.
         private void reinstallBtn_Click(object sender, EventArgs e)
         {
-            output_textbox.Clear();
-            output_textbox.AppendText("Reinstall Easy Anticheat (EAC)\n");
-            output_textbox.AppendText("=========================================\n");
-
-            try
-            {
-                Process.Start("C:\\Program Files(x86)\\Steam\\steamapps\\common\\Squad\\EasyAntiCheat\\EasyAntiCheat_Setup.exe");
-                //Process.Start("E:\\SteamLibrary\\steamapps\\common\\Squad\\EasyAntiCheat\\EasyAntiCheat_Setup.exe");
-            }
-            catch (Exception ex)
-            {
-                output_textbox.AppendText(ex.Message + "\n");
-                return;
-            }
-            finally
-            {
-                output_textbox.AppendText("EAC has been reinstalled");
-            }
+            installTool(1);
         }
 
         // Copies all squad log files including UE4 Dump files to your desktop into a SQUAD logs folder, zip it up 
@@ -128,12 +114,6 @@ namespace Squad_Troubleshooter
             var destPath = Environment.GetEnvironmentVariable("USERPROFILE");
             destPath = destPath + "\\Desktop\\Squad.log";
 
-            // DEBUG STATEMENT : REMOVE WHEN COMPLETED
-            //output_textbox.AppendText("FILE LOCATION: ");
-            //output_textbox.AppendText(path);
-            //output_textbox.AppendText("DESTINATION LOCATION: ");
-            //output_textbox.AppendText(destPath);
-
             try
             {
                 output_textbox.AppendText("Copying...\n");
@@ -147,31 +127,170 @@ namespace Squad_Troubleshooter
             output_textbox.AppendText("Copy Complete!\n");
         }
 
+        private string getSteamPath()
+        {
+            string steamPath = "";
+            RegistryKey regKey = Registry.CurrentUser;
+            regKey = regKey.OpenSubKey(@"Software\Valve\Steam");
+
+            if (regKey != null)
+            {
+                steamPath = (regKey.GetValue("SteamPath").ToString());
+            }
+
+            return steamPath;
+        }
+
+        private string getSquadLibraryPath(string steamPath)
+        {
+            string line = "";
+            //string[] possiblePaths = new string[5];
+            //string pattern = "\"[0-9]\"";
+            //System.Text.RegularExpressions.Regex rgx = new System.Text.RegularExpressions.Regex(pattern);
+
+            string SQUAD_LIBRARY_PATH = "";
+            string SQUAD_EXE_PATH = "";
+            string DEFAULT_PATH = (System.IO.Path.Combine(steamPath, "steamapps", "common", "Squad")).Replace("/", "\\");
+            string STEAM_PATH = steamPath.Replace("/", "\\");
+            string VDF_PATH = (System.IO.Path.Combine(steamPath, "steamapps", "libraryfolders.vdf")).Replace("/", "\\");
+            
+            StreamReader file = new StreamReader(VDF_PATH);
+            while ((line = file.ReadLine()) != null)
+            {
+                line = line.Trim();
+                if (line.StartsWith("\"1\""))
+                {
+                    line = line.Replace("\t", " ");
+                    line = line.Replace("\"", "");
+                    line = line.Replace(" ", "");
+                    line = line.Remove(0, 1);
+                    line = line.Replace("\\\\", "\\");
+                    SQUAD_EXE_PATH = System.IO.Path.Combine(line, "steamapps", "common", "Squad", "Squad.exe");
+                }
+            }
+            file.Close();
+            
+            if(File.Exists(SQUAD_EXE_PATH))
+            {
+                return (SQUAD_LIBRARY_PATH);
+            }
+            else
+            {
+                return DEFAULT_PATH;
+            }
+        }
+
+
+        private bool installTool(int toolToInstall)
+        {
+            // This will install the requested tool.
+            // 1. EAC
+            // 2. vc_redist (2013)
+            // 3. vc_redist (2015)
+
+            string steamPath = getSteamPath();
+            string libraryPath = getSquadLibraryPath(steamPath);
+
+            string VCREDIST_PATH_2013 = System.IO.Path.Combine(libraryPath, "_CommonRedist", "vcredist", "2013", "vc_redist.x64.exe");
+            string VCREDIST_PATH_2015 = System.IO.Path.Combine(libraryPath, "_CommonRedist", "vcredist", "2015", "vc_redist.x64.exe");
+            string EAC_PATH = System.IO.Path.Combine(libraryPath, "EasyAntiCheat", "EasyAntiCheat_Setup.exe");
+
+            switch (toolToInstall)
+            {
+                case 1:
+                    // RUN EAC INSTALLER
+                    if (File.Exists(EAC_PATH))
+                    {
+                        output_textbox.AppendText("Instlaling EasyAntiCheat_Setup.exe...");
+                        try
+                        {
+                            string installCommand = "/C " + EAC_PATH;
+                            var process = Process.Start(installCommand);
+                            process.WaitForExit();
+                        }
+                        catch (Exception ex)
+                        {
+                            output_textbox.AppendText(ex.Message + "\n");
+                            break;
+                        }
+                        finally
+                        {
+                            output_textbox.AppendText("EAC installation complete");
+                        }
+                    }
+                    else
+                    {
+                        output_textbox.AppendText("No binaries for EasyAntiCheat_Setup.exe...\n");
+                        output_textbox.AppendText("Skipping EasyAntiCheat_Setup.exe install...");
+                    }
+                    break;
+                case 2:
+                    // RUN VC_REDIST (2013) INSTALLER
+                    if (File.Exists(VCREDIST_PATH_2013))
+                    {
+                        output_textbox.AppendText("Installing vc_redist.x64.exe...");
+                        try
+                        {
+                            string installCommand = "/C " + VCREDIST_PATH_2013 + " //install //passive //norestart";
+                            var process = Process.Start(installCommand);
+                            process.WaitForExit();
+                        }
+                        catch (Exception ex)
+                        {
+                            output_textbox.AppendText(ex.Message + "\n");
+                            break;
+                        }
+                        finally
+                        {
+                            output_textbox.AppendText("VC Redistributable installation complete");
+                        }
+                    }
+                    else
+                    {
+                        output_textbox.AppendText("No binaries for vc_redist.x64.exe...\n");
+                        output_textbox.AppendText("Skipping vc_redist.x64.exe (2013) install...");
+                    }
+                    break;
+                case 3:
+                    // RUN VC_REDIST (2015) INSTALLER
+                    if (File.Exists(VCREDIST_PATH_2015))
+                    {
+                        output_textbox.AppendText("Installing vc_redist.x64.exe...");
+                        try
+                        {
+                            string installCommand = "/C " + VCREDIST_PATH_2015 + " //install //passive //norestart";
+                            Process.Start(installCommand);
+                        }
+                        catch (Exception ex)
+                        {
+                            output_textbox.AppendText(ex.Message + "\n");
+                            break;
+                        }
+                        finally
+                        {
+                            output_textbox.AppendText("VC Redistributable installation complete");
+                        }
+                    }
+                    else
+                    {
+                        output_textbox.AppendText("No binaries for vc_redist.x64.exe...\n");
+                        output_textbox.AppendText("Skipping vc_redist.x64.exe (2015) install...");
+                    }
+                    break;
+                default:
+                    // OUTPUT ERROR AND EXIT
+                    output_textbox.AppendText("Something went wrong...");
+                    break;
+            }
+            return false;
+        }
+
         // Attempts to silently install VC Redistributables 2013 and 2015, if any error occurs you may have to 
         // make sure your copy of windows is up to date, make sure no updates are available
         private void installBtn_Click(object sender, EventArgs e)
         {
-            output_textbox.Clear();
-            output_textbox.AppendText("Install VC Redistributable 2013 + 2015\n");
-            output_textbox.AppendText("=========================================\n");
-
-            try
-            {
-                string sysCmd1 = "/C C:\\Program Files (x86)\\Steam\\steamapps\\common\\Squad\\_CommonRedist\\vcredist\\2013\\vcredist_x64.exe //install //passive //norestart";
-                string sysCmd2 = "/C C:\\Program Files (x86)\\Steam\\steamapps\\common\\Squad\\_CommonRedist\\vcredist\\2015\\vc_redist.x64.exe //install //passive //norestart";
-
-                Process.Start(sysCmd1);
-                Process.Start(sysCmd2);
-            }
-            catch (Exception ex)
-            {
-                output_textbox.AppendText(ex.Message + "\n");
-                return;
-            }
-            finally
-            {
-                output_textbox.AppendText("VC Redistributable installations complete");
-            }
+            installTool(2);
+            installTool(3);
         }
 
         // Disables Windows firewall, as a troubleshooting step if your having networking issues
