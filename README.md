@@ -1,1 +1,1 @@
-# SuicidalChair's Improved Squad Troubleshooter
+# Improved Squad Troubleshooter
