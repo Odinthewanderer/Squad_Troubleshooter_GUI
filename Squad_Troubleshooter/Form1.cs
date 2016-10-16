@@ -29,19 +29,146 @@ namespace Squad_Troubleshooter
             InitializeComponent();
         }
 
+        // This function gets the persistent data settings, loads them into memory, and ensures the correct language is checkd. 
+        private void loadSettings()
+        {
+            SELECTED_LANGUAGE = Properties.Settings.Default["lang"].ToString();
+            if (SELECTED_LANGUAGE == "ENGLISH")
+            {
+                englishToolStripMenuItem.Checked = true;
+                germanToolStripMenuItem.Checked = false;
+                polishToolStripMenuItem.Checked = false;
+                frenchToolStripMenuItem.Checked = false;
+                chineseToolStripMenuItem.Checked = false;
+                russianToolStripMenuItem.Checked = false;
+                swedishToolStripMenuItem.Checked = false;
+                dutchToolStripMenuItem.Checked = false;
+                spanishToolStripMenuItem.Checked = false;
+                portugeseBrazilianToolStripMenuItem.Checked = false;
+            }
+            else if (SELECTED_LANGUAGE == "GERMAN")
+            {
+                englishToolStripMenuItem.Checked = false;
+                germanToolStripMenuItem.Checked = true;
+                polishToolStripMenuItem.Checked = false;
+                frenchToolStripMenuItem.Checked = false;
+                chineseToolStripMenuItem.Checked = false;
+                russianToolStripMenuItem.Checked = false;
+                swedishToolStripMenuItem.Checked = false;
+                dutchToolStripMenuItem.Checked = false;
+                spanishToolStripMenuItem.Checked = false;
+                portugeseBrazilianToolStripMenuItem.Checked = false;
+            }
+            else if (SELECTED_LANGUAGE == "POLISH")
+            {
+                englishToolStripMenuItem.Checked = false;
+                germanToolStripMenuItem.Checked = false;
+                polishToolStripMenuItem.Checked = true;
+                frenchToolStripMenuItem.Checked = false;
+                chineseToolStripMenuItem.Checked = false;
+                russianToolStripMenuItem.Checked = false;
+                swedishToolStripMenuItem.Checked = false;
+                dutchToolStripMenuItem.Checked = false;
+                spanishToolStripMenuItem.Checked = false;
+                portugeseBrazilianToolStripMenuItem.Checked = false;
+            }
+            else if (SELECTED_LANGUAGE == "FRENCH")
+            {
+                englishToolStripMenuItem.Checked = false;
+                germanToolStripMenuItem.Checked = false;
+                polishToolStripMenuItem.Checked = false;
+                frenchToolStripMenuItem.Checked = true;
+                chineseToolStripMenuItem.Checked = false;
+                russianToolStripMenuItem.Checked = false;
+                swedishToolStripMenuItem.Checked = false;
+                dutchToolStripMenuItem.Checked = false;
+                spanishToolStripMenuItem.Checked = false;
+                portugeseBrazilianToolStripMenuItem.Checked = false;
+            }
+            else if (SELECTED_LANGUAGE == "CHINESE")
+            {
+                englishToolStripMenuItem.Checked = false;
+                germanToolStripMenuItem.Checked = false;
+                polishToolStripMenuItem.Checked = false;
+                frenchToolStripMenuItem.Checked = false;
+                chineseToolStripMenuItem.Checked = true;
+                russianToolStripMenuItem.Checked = false;
+                swedishToolStripMenuItem.Checked = false;
+                dutchToolStripMenuItem.Checked = false;
+                spanishToolStripMenuItem.Checked = false;
+                portugeseBrazilianToolStripMenuItem.Checked = false;
+            }
+            else if (SELECTED_LANGUAGE == "RUSSIAN")
+            {
+                englishToolStripMenuItem.Checked = false;
+                germanToolStripMenuItem.Checked = false;
+                polishToolStripMenuItem.Checked = false;
+                frenchToolStripMenuItem.Checked = false;
+                chineseToolStripMenuItem.Checked = false;
+                russianToolStripMenuItem.Checked = true;
+                swedishToolStripMenuItem.Checked = false;
+                dutchToolStripMenuItem.Checked = false;
+                spanishToolStripMenuItem.Checked = false;
+                portugeseBrazilianToolStripMenuItem.Checked = false;
+            }
+            else if (SELECTED_LANGUAGE == "SWEDISH")
+            {
+                englishToolStripMenuItem.Checked = false;
+                germanToolStripMenuItem.Checked = false;
+                polishToolStripMenuItem.Checked = false;
+                frenchToolStripMenuItem.Checked = false;
+                chineseToolStripMenuItem.Checked = false;
+                russianToolStripMenuItem.Checked = false;
+                swedishToolStripMenuItem.Checked = true;
+                dutchToolStripMenuItem.Checked = false;
+                spanishToolStripMenuItem.Checked = false;
+                portugeseBrazilianToolStripMenuItem.Checked = false;
+            }
+            else if (SELECTED_LANGUAGE == "DUTCH")
+            {
+                englishToolStripMenuItem.Checked = false;
+                germanToolStripMenuItem.Checked = false;
+                polishToolStripMenuItem.Checked = false;
+                frenchToolStripMenuItem.Checked = false;
+                chineseToolStripMenuItem.Checked = false;
+                russianToolStripMenuItem.Checked = false;
+                swedishToolStripMenuItem.Checked = false;
+                dutchToolStripMenuItem.Checked = true;
+                spanishToolStripMenuItem.Checked = false;
+                portugeseBrazilianToolStripMenuItem.Checked = false;
+            }
+            else if (SELECTED_LANGUAGE == "SPANISH")
+            {
+                englishToolStripMenuItem.Checked = false;
+                germanToolStripMenuItem.Checked = false;
+                polishToolStripMenuItem.Checked = false;
+                frenchToolStripMenuItem.Checked = false;
+                chineseToolStripMenuItem.Checked = false;
+                russianToolStripMenuItem.Checked = false;
+                swedishToolStripMenuItem.Checked = false;
+                dutchToolStripMenuItem.Checked = false;
+                spanishToolStripMenuItem.Checked = true;
+                portugeseBrazilianToolStripMenuItem.Checked = false;
+            }
+            else if (SELECTED_LANGUAGE == "PORTUGUESE-BRAZILIAN")
+            {
+                englishToolStripMenuItem.Checked = true;
+                germanToolStripMenuItem.Checked = false;
+                polishToolStripMenuItem.Checked = false;
+                frenchToolStripMenuItem.Checked = false;
+                chineseToolStripMenuItem.Checked = false;
+                russianToolStripMenuItem.Checked = false;
+                swedishToolStripMenuItem.Checked = false;
+                dutchToolStripMenuItem.Checked = false;
+                spanishToolStripMenuItem.Checked = false;
+                portugeseBrazilianToolStripMenuItem.Checked = false;
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
+            loadSettings();
             pathLbl.Text = "DEFAULT SQUAD PATH: " + DEFAULT_SQUAD_PATH;
-            SELECTED_LANGUAGE = "ENGLISH";
-            englishToolStripMenuItem.Checked = true;
-            germanToolStripMenuItem.Checked = false;
-            polishToolStripMenuItem.Checked = false;
-            frenchToolStripMenuItem.Checked = false;
-            chineseToolStripMenuItem.Checked = false;
-            russianToolStripMenuItem.Checked = false;
-            swedishToolStripMenuItem.Checked = false;
-            dutchToolStripMenuItem.Checked = false;
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
             switchLanguage();
         }
 
@@ -378,52 +505,65 @@ namespace Squad_Troubleshooter
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
+                //Properties.Resources.lang = "ENGLISH";
+                Properties.Settings.Default["lang"] = "ENGLISH";
             }
             else if (SELECTED_LANGUAGE == "GERMAN")
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("de-DE");
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("de-DE");
+                Properties.Settings.Default["lang"] = "GERMAN";
             }
             else if (SELECTED_LANGUAGE == "POLISH")
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("pl-PL");
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("pl-PL");
+                Properties.Settings.Default["lang"] = "POLISH";
             }
             else if (SELECTED_LANGUAGE == "FRENCH")
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("fr-FR");
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("fr-FR");
+                Properties.Settings.Default["lang"] = "FRENCH";
             }
             else if (SELECTED_LANGUAGE == "CHINESE")
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("zh-CN");
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("zh-CN");
+                Properties.Settings.Default["lang"] = "CHINESE";
             }
             else if (SELECTED_LANGUAGE == "RUSSIAN")
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("ru-RU");
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("ru-RU");
+                Properties.Settings.Default["lang"] = "RUSSIAN";
             }
             else if (SELECTED_LANGUAGE == "SWEDISH")
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("sv-SE");
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("sv-SE");
+                Properties.Settings.Default["lang"] = "SWEDISH";
             }
             else if (SELECTED_LANGUAGE == "DUTCH")
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("nl-NL");
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("nl-NL");
+                Properties.Settings.Default["lang"] = "DUTCH";
             }
             else if (SELECTED_LANGUAGE == "SPANISH")
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("es-ES");
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("es-ES");
+                Properties.Settings.Default["lang"] = "SPANISH";
             }
-            else if (SELECTED_LANGUAGE == "PORTUGESE-BRAZILIAN")
+            else if (SELECTED_LANGUAGE == "PORTUGUESE-BRAZILIAN")
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("pt-BR");
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("pt-BR");
+                Properties.Settings.Default["lang"] = "PORTUGUESE-BRAZILIAN";
             }
+
+            Properties.Settings.Default.Save();
 
             //MessageBox.Show(Properties.Language.strings.APP_TITLE);
             fileToolStripMenuItem.Text = Properties.Language.strings.FILE_MENU_PARENT;
@@ -526,7 +666,7 @@ namespace Squad_Troubleshooter
         private void portugeseBrazilianToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toggleChecked(portugeseBrazilianToolStripMenuItem);
-            SELECTED_LANGUAGE = "PORTUGESE-BRAZILIAN";
+            SELECTED_LANGUAGE = "PORTUGUESE-BRAZILIAN";
             switchLanguage();
         }
 
