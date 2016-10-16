@@ -19,7 +19,10 @@ namespace Squad_Troubleshooter
 {
     public partial class Form1 : Form
     {
+
         private string SELECTED_LANGUAGE = "ENGLISH";
+        private static string DEFAULT_SQUAD_PATH = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Squad";
+        private string CURRENT_SQUAD_PATH = "";
 
         public Form1()
         {
@@ -28,6 +31,7 @@ namespace Squad_Troubleshooter
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            pathLbl.Text = "DEFAULT SQUAD PATH: " + DEFAULT_SQUAD_PATH;
             SELECTED_LANGUAGE = "ENGLISH";
             englishToolStripMenuItem.Checked = true;
             germanToolStripMenuItem.Checked = false;
@@ -98,11 +102,41 @@ namespace Squad_Troubleshooter
             }
         }
 
+        private bool testPath(string PATH_TO_TEST)
+        {
+            return (File.Exists(System.IO.Path.Combine(PATH_TO_TEST, "Squad.exe")));
+        }
+
         // Launches the EasyAntiCheat installer in the Squad install directory, make sure you pick squad as your game.
         private void reinstallBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
-            installTool(1);
+            DialogResult dialogResult = MessageBox.Show(Properties.Language.strings.PATH_CONFIRM + "\n" + DEFAULT_SQUAD_PATH, Properties.Language.strings.CONFIRM_TITLE, MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CURRENT_SQUAD_PATH = DEFAULT_SQUAD_PATH;
+            }
+            else
+            {
+                FolderBrowserDialog directoryBroswer = new FolderBrowserDialog();
+                DialogResult result = directoryBroswer.ShowDialog();
+
+                if (!string.IsNullOrWhiteSpace(directoryBroswer.SelectedPath))
+                {
+                    CURRENT_SQUAD_PATH = directoryBroswer.SelectedPath;
+                }
+            }
+            pathLbl.Text = CURRENT_SQUAD_PATH;
+            if(testPath(System.IO.Path.Combine(CURRENT_SQUAD_PATH, "Squad.exe")))
+            {
+                output_textbox.AppendText(System.IO.Path.Combine(CURRENT_SQUAD_PATH, "Squad.exe") + "\n");
+                installTool(1, CURRENT_SQUAD_PATH);
+            }
+            else
+            {
+                output_textbox.AppendText(Properties.Language.strings.REINSTALL_ERROR_OUTPUT1 + "\n");
+                output_textbox.AppendText(Properties.Language.strings.REINSTALL_ERROR_OUTPUT2 + "\n");
+            }
         }
 
         // Copies all squad log files including UE4 Dump files to your desktop into a SQUAD logs folder, zip it up 
@@ -133,72 +167,16 @@ namespace Squad_Troubleshooter
             output_textbox.AppendText(Properties.Language.strings.COPY_OUTPUT3 + "\n");
         }
 
-        private string getSteamPath()
-        {
-            string steamPath = "";
-            RegistryKey regKey = Registry.CurrentUser;
-            regKey = regKey.OpenSubKey(@"Software\Valve\Steam");
-
-            if (regKey != null)
-            {
-                steamPath = (regKey.GetValue("SteamPath").ToString());
-            }
-
-            return steamPath;
-        }
-
-        private string getSquadLibraryPath(string steamPath)
-        {
-            string line = "";
-            //string[] possiblePaths = new string[5];
-            //string pattern = "\"[0-9]\"";
-            //System.Text.RegularExpressions.Regex rgx = new System.Text.RegularExpressions.Regex(pattern);
-
-            string SQUAD_LIBRARY_PATH = "";
-            string SQUAD_EXE_PATH = "";
-            string DEFAULT_PATH = (System.IO.Path.Combine(steamPath, "steamapps", "common", "Squad")).Replace("/", "\\");
-            string STEAM_PATH = steamPath.Replace("/", "\\");
-            string VDF_PATH = (System.IO.Path.Combine(steamPath, "steamapps", "libraryfolders.vdf")).Replace("/", "\\");
-            
-            StreamReader file = new StreamReader(VDF_PATH);
-            while ((line = file.ReadLine()) != null)
-            {
-                line = line.Trim();
-                if (line.StartsWith("\"1\""))
-                {
-                    line = line.Replace("\t", " ");
-                    line = line.Replace("\"", "");
-                    line = line.Replace(" ", "");
-                    line = line.Remove(0, 1);
-                    line = line.Replace("\\\\", "\\");
-                    SQUAD_EXE_PATH = System.IO.Path.Combine(line, "steamapps", "common", "Squad", "Squad.exe");
-                }
-            }
-            file.Close();
-            
-            if(File.Exists(SQUAD_EXE_PATH))
-            {
-                return (SQUAD_LIBRARY_PATH);
-            }
-            else
-            {
-                return DEFAULT_PATH;
-            }
-        }
-
-        private bool installTool(int toolToInstall)
+        private bool installTool(int toolToInstall, string INSTALL_PATH)
         {
             // This will install the requested tool.
             // 1. EAC
             // 2. vc_redist (2013)
             // 3. vc_redist (2015)
 
-            string steamPath = getSteamPath();
-            string libraryPath = getSquadLibraryPath(steamPath);
-
-            string VCREDIST_PATH_2013 = System.IO.Path.Combine(libraryPath, "_CommonRedist", "vcredist", "2013", "vc_redist.x64.exe");
-            string VCREDIST_PATH_2015 = System.IO.Path.Combine(libraryPath, "_CommonRedist", "vcredist", "2015", "vc_redist.x64.exe");
-            string EAC_PATH = System.IO.Path.Combine(libraryPath, "EasyAntiCheat", "EasyAntiCheat_Setup.exe");
+            string VCREDIST_PATH_2013 = System.IO.Path.Combine(INSTALL_PATH, "_CommonRedist", "vcredist", "2013", "vc_redist.x64.exe");
+            string VCREDIST_PATH_2015 = System.IO.Path.Combine(INSTALL_PATH, "_CommonRedist", "vcredist", "2015", "vc_redist.x64.exe");
+            string EAC_PATH = System.IO.Path.Combine(INSTALL_PATH, "EasyAntiCheat", "EasyAntiCheat_Setup.exe");
 
             switch (toolToInstall)
             {
@@ -295,8 +273,36 @@ namespace Squad_Troubleshooter
         private void installBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
-            installTool(2);
-            installTool(3);
+            output_textbox.Clear();
+            DialogResult dialogResult = MessageBox.Show(Properties.Language.strings.PATH_CONFIRM + "\n" + DEFAULT_SQUAD_PATH, Properties.Language.strings.CONFIRM_TITLE, MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CURRENT_SQUAD_PATH = DEFAULT_SQUAD_PATH;
+            }
+            else
+            {
+                FolderBrowserDialog directoryBroswer = new FolderBrowserDialog();
+                DialogResult result = directoryBroswer.ShowDialog();
+
+                if (!string.IsNullOrWhiteSpace(directoryBroswer.SelectedPath))
+                {
+                    CURRENT_SQUAD_PATH = directoryBroswer.SelectedPath;
+                }
+            }
+            pathLbl.Text = CURRENT_SQUAD_PATH;
+            if (testPath(System.IO.Path.Combine(CURRENT_SQUAD_PATH, "Squad.exe")))
+            {
+                output_textbox.AppendText(System.IO.Path.Combine(CURRENT_SQUAD_PATH, "Squad.exe") + "\n");
+                installTool(2, CURRENT_SQUAD_PATH);
+                installTool(3, CURRENT_SQUAD_PATH);
+            }
+            else
+            {
+                output_textbox.AppendText(Properties.Language.strings.INSTALL_VCREDIST_2013_ERROR_OUTPUT1 + "\n");
+                output_textbox.AppendText(Properties.Language.strings.INSTALL_VCREDIST_2013_ERROR_OUTPUT2 + "\n");
+                output_textbox.AppendText(Properties.Language.strings.INSTALL_VCREDIST_2015_ERROR_OUTPUT1 + "\n");
+                output_textbox.AppendText(Properties.Language.strings.INSTALL_VCREDIST_2015_ERROR_OUTPUT2 + "\n");
+            }
         }
 
         // Disables Windows firewall, as a troubleshooting step if your having networking issues
@@ -367,6 +373,7 @@ namespace Squad_Troubleshooter
 
         private void switchLanguage()
         {
+            output_textbox.Clear();
             if (SELECTED_LANGUAGE == "ENGLISH")
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
@@ -521,6 +528,21 @@ namespace Squad_Troubleshooter
             toggleChecked(portugeseBrazilianToolStripMenuItem);
             SELECTED_LANGUAGE = "PORTUGESE-BRAZILIAN";
             switchLanguage();
+        }
+
+        private void pathBtn_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog directoryBroswer = new FolderBrowserDialog();
+            DialogResult result = directoryBroswer.ShowDialog();
+
+            if (!string.IsNullOrWhiteSpace(directoryBroswer.SelectedPath))
+            {
+                MessageBox.Show(directoryBroswer.SelectedPath);
+            }
+            else
+            {
+                MessageBox.Show("NULL");
+            }
         }
     }
 }

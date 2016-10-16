@@ -120,6 +120,9 @@
   <data name="APP_TITLE" xml:space="preserve">
     <value>Squad Troubleshooter</value>
   </data>
+  <data name="CONFIRM_TITLE" xml:space="preserve">
+    <value>Confirm Squad Path</value>
+  </data>
   <data name="COPY_OUTPUT1" xml:space="preserve">
     <value>Cópia do pelotão registra para o Desktop</value>
   </data>
@@ -245,6 +248,9 @@
   </data>
   <data name="NUKE_OUTPUT2" xml:space="preserve">
     <value>Foi nukado com sucesso</value>
+  </data>
+  <data name="PATH_CONFIRM" xml:space="preserve">
+    <value>Do you want to use the default Squad path?</value>
   </data>
   <data name="REINSTALL_ERROR_OUTPUT1" xml:space="preserve">
     <value>Não binários para EasyAntiCheat_Setup.exe ...</value>

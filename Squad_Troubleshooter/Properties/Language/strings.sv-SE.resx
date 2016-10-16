@@ -120,151 +120,157 @@
   <data name="APP_TITLE" xml:space="preserve">
     <value>Squad Felsökare</value>
   </data>
+  <data name="CONFIRM_TITLE" xml:space="preserve">
+    <value>Confirm Squad Path</value>
+  </data>
   <data name="COPY_OUTPUT1" xml:space="preserve">
-    <value>Kopiera Squad loggar till skrivbordet</value>
+    <value>Kopiera Squadloggar till Skrivbordet</value>
   </data>
   <data name="COPY_OUTPUT2" xml:space="preserve">
-    <value>Kopiering ...</value>
+    <value>Kopierar...</value>
   </data>
   <data name="COPY_OUTPUT3" xml:space="preserve">
-    <value>Kopiera Complete!</value>
+    <value>Kopiering slutförd!</value>
   </data>
   <data name="DISABLE_FIREWALL_BUTTON" xml:space="preserve">
     <value>Inaktivera Windows-brandväggen</value>
   </data>
   <data name="DISABLE_OUTPUT1" xml:space="preserve">
-    <value>Inaktivera Windows-brandväggen ...</value>
+    <value>Inaktiverar Windowsbrandväggen...</value>
   </data>
   <data name="DISABLE_OUTPUT2" xml:space="preserve">
-    <value>brandvägg funktionshindrade</value>
+    <value>Brandväggen inaktiverad</value>
   </data>
   <data name="EAC_BUTTON" xml:space="preserve">
-    <value>Installera Easy Anti-Cheat (EAC)</value>
+    <value>Omisntallera Easy Anti Cheat (EAC)</value>
   </data>
   <data name="ENABLE_FIREWALL_BUTTON" xml:space="preserve">
-    <value>Aktivera Windows-brandväggen</value>
+    <value>Aktivera Windowsbrandväggen</value>
   </data>
   <data name="ENABLE_OUTPUT1" xml:space="preserve">
-    <value>Aktivera Windows-brandväggen ...</value>
+    <value>Aktiverar Windowsbrandväggen...</value>
   </data>
   <data name="ENABLE_OUTPUT2" xml:space="preserve">
-    <value>brandvägg aktiverad</value>
+    <value>Brandväggen aktiverad</value>
   </data>
   <data name="FILE_MENU_EXIT" xml:space="preserve">
-    <value>Utgång</value>
+    <value>Avsluta</value>
   </data>
   <data name="FILE_MENU_PARENT" xml:space="preserve">
-    <value>Fil</value>
+    <value>Arkiv</value>
   </data>
   <data name="GENERATE_BUTTON" xml:space="preserve">
-    <value>Generera Windows Event Log</value>
+    <value>Skapa Windows Händelselogg</value>
   </data>
   <data name="GENERATING_OUTPUT1" xml:space="preserve">
-    <value>Generera loggfiler ...</value>
+    <value>Skapar loggfiler...</value>
   </data>
   <data name="GENERATING_OUTPUT2" xml:space="preserve">
-    <value>har genererats Loggfiler och finns nu på skrivbordet</value>
+    <value>Loggfiler har blivit skapade och ligger nu på ditt skrivbord. </value>
   </data>
   <data name="GENERATING_OUTPUT3" xml:space="preserve">
-    <value>Loggen sparas som</value>
+    <value>Loggen är sparad som</value>
   </data>
   <data name="GENERATING_OUTPUT4" xml:space="preserve">
     <value>Vänligen skicka alla loggfiler till support@joinsquad.com</value>
   </data>
   <data name="GET_HELP_OUTPUT1" xml:space="preserve">
-    <value>Om du experiancing spelet kraschar när du använder Server Browser i spel kopiera följande URL och besöka forum:</value>
+    <value>Om ditt spel kraschar när du använder serverlistan i spelet kopiera följande URL och besök forumen</value>
   </data>
   <data name="GET_HELP_OUTPUT2" xml:space="preserve">
     <value>http://goo.gl/yvTOfS</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_ERROR_OUTPUT1" xml:space="preserve">
-    <value>Inga binärer för vc_redist.x64.exe (2013) ...</value>
+    <value>Inga körbara filer för vc_redist.x64.exe (2013)...</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_ERROR_OUTPUT2" xml:space="preserve">
-    <value>Hoppar vc_redist.x64.exe (2013) installera ...</value>
+    <value>Hoppar över vc_redist.x64.exe (2013) installation... </value>
   </data>
   <data name="INSTALL_VCREDIST_2013_OUTPUT1" xml:space="preserve">
-    <value>Installera vc_redist.x64.exe (2013) ...</value>
+    <value>Installerar vc_redist.x64.exe </value>
   </data>
   <data name="INSTALL_VCREDIST_2013_OUTPUT2" xml:space="preserve">
-    <value>VC Vidaredistribuerbar (2013) installationen klar</value>
+    <value>VC Redistributable (2013) installation slutförd</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_ERROR_OUTPUT1" xml:space="preserve">
-    <value>Inga binärer för vc_redist.x64.exe (2015) ...</value>
+    <value>Inga körbara filer för vc_redist.x64.exe (2015)...</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_ERROR_OUTPUT2" xml:space="preserve">
-    <value>Hoppar vc_redist.x64.exe (2015) installera ...</value>
+    <value>Hoppar över vc_redist.x64.exe (2015) installation...</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_OUTPUT1" xml:space="preserve">
-    <value>Installera vc_redist.x64.exe (2015) ...</value>
+    <value>Installerar vc_redist.x64.exe (2015)...</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_OUTPUT2" xml:space="preserve">
-    <value>VC Vidaredistribuerbar (2015) installationen klar</value>
+    <value>VC Redistributable (2015) installation slutförd</value>
   </data>
   <data name="LANGUAGES_MENU_CHINESE" xml:space="preserve">
-    <value>kinesisk</value>
+    <value>Kinesiska</value>
   </data>
   <data name="LANGUAGES_MENU_DUTCH" xml:space="preserve">
-    <value>holländska</value>
+    <value>Holländska</value>
   </data>
   <data name="LANGUAGES_MENU_ENGLISH" xml:space="preserve">
     <value>Engelska</value>
   </data>
   <data name="LANGUAGES_MENU_FRENCH" xml:space="preserve">
-    <value>franska</value>
+    <value>Franska</value>
   </data>
   <data name="LANGUAGES_MENU_GERMAN" xml:space="preserve">
-    <value>tysk</value>
+    <value>Tyska</value>
   </data>
   <data name="LANGUAGES_MENU_PARENT" xml:space="preserve">
-    <value>språk</value>
+    <value>Språk</value>
   </data>
   <data name="LANGUAGES_MENU_POLISH" xml:space="preserve">
-    <value>polska</value>
+    <value>Polska</value>
   </data>
   <data name="LANGUAGES_MENU_PORTUGUESE_BRAZILIAN" xml:space="preserve">
-    <value>Portugisiska - brasiliansk</value>
+    <value>Portugisiska - Brasilianska</value>
   </data>
   <data name="LANGUAGES_MENU_RUSSIAN" xml:space="preserve">
-    <value>ryska</value>
+    <value>Ryska</value>
   </data>
   <data name="LANGUAGES_MENU_SPANISH" xml:space="preserve">
-    <value>spansk</value>
+    <value>Spanska</value>
   </data>
   <data name="LANGUAGES_MENU_SWEDISH" xml:space="preserve">
-    <value>svenska</value>
+    <value>Svenska</value>
   </data>
   <data name="LOGS_BUTTON" xml:space="preserve">
-    <value>Kopiera Squad loggar till skrivbordet</value>
+    <value>Kopiera Squadloggar till Skrivbordet</value>
   </data>
   <data name="NUKE_BUTTON" xml:space="preserve">
-    <value>Nuke AppData Konfigurationsfiler</value>
+    <value>Ta bort AppData konfigurationsfiler </value>
   </data>
   <data name="NUKE_OUTPUT1" xml:space="preserve">
-    <value>AppData katalog</value>
+    <value>AppData Mappen</value>
   </data>
   <data name="NUKE_OUTPUT2" xml:space="preserve">
-    <value>har framgångsrikt nuked</value>
+    <value>har blivit borttagen</value>
+  </data>
+  <data name="PATH_CONFIRM" xml:space="preserve">
+    <value>Do you want to use the default Squad path?</value>
   </data>
   <data name="REINSTALL_ERROR_OUTPUT1" xml:space="preserve">
-    <value>Inga binärer för EasyAntiCheat_Setup.exe ...</value>
+    <value>Inga körbara filer för EasyAntiCheat_Setup.exe...</value>
   </data>
   <data name="REINSTALL_ERROR_OUTPUT2" xml:space="preserve">
-    <value>Hoppa EasyAntiCheat_Setup.exe installera ...</value>
+    <value>Hoppar över EasyAntiCheat_Setup.exe installation...</value>
   </data>
   <data name="REINSTALL_OUTPUT1" xml:space="preserve">
-    <value>Installerar EasyAntiCheat_Setup.exe ...</value>
+    <value>Installerar EasyAntiCheat_Setup.exe... </value>
   </data>
   <data name="REINSTALL_OUTPUT2" xml:space="preserve">
-    <value>EAC installationen klar</value>
+    <value>EAC installation slutförd!</value>
   </data>
   <data name="SERVER_BROWSER_BUTTON" xml:space="preserve">
-    <value>Få hjälp med spelet kraschar på server webbläsare</value>
+    <value>Få hjälp med krascher med serverlistan</value>
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
     <value>Något gick fel...</value>
   </data>
   <data name="VCREDIST_BUTTON" xml:space="preserve">
-    <value>Installera VC Vidaredistribuerbar 2013 + 2015</value>
+    <value>Installera VC Redistributable 2013+2015</value>
   </data>
 </root>

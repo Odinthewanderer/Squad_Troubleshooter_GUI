@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="nukeBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 53</value>
+    <value>96, 81</value>
   </data>
   <data name="nukeBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>419, 23</value>
@@ -129,7 +129,7 @@
     <value>0</value>
   </data>
   <data name="nukeBtn.Text" xml:space="preserve">
-    <value>Nuke AppData Config Files</value>
+    <value>Delete AppData configuration files</value>
   </data>
   <data name="&gt;&gt;nukeBtn.Name" xml:space="preserve">
     <value>nukeBtn</value>
@@ -141,10 +141,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nukeBtn.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="generateBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 82</value>
+    <value>96, 110</value>
   </data>
   <data name="generateBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>419, 23</value>
@@ -165,10 +165,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;generateBtn.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="reinstallBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 111</value>
+    <value>96, 139</value>
   </data>
   <data name="reinstallBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>419, 23</value>
@@ -189,10 +189,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;reinstallBtn.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="copyBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 140</value>
+    <value>96, 168</value>
   </data>
   <data name="copyBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>419, 23</value>
@@ -213,10 +213,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;copyBtn.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="installBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 169</value>
+    <value>96, 197</value>
   </data>
   <data name="installBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>419, 23</value>
@@ -237,10 +237,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;installBtn.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="disableBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 198</value>
+    <value>96, 226</value>
   </data>
   <data name="disableBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>419, 23</value>
@@ -261,10 +261,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;disableBtn.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="enableBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 227</value>
+    <value>96, 255</value>
   </data>
   <data name="enableBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>419, 23</value>
@@ -285,10 +285,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;enableBtn.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="getHelpBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 256</value>
+    <value>96, 284</value>
   </data>
   <data name="getHelpBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>419, 23</value>
@@ -309,13 +309,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;getHelpBtn.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="output_textbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 323</value>
+    <value>12, 313</value>
   </data>
   <data name="output_textbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>583, 310</value>
+    <value>583, 320</value>
   </data>
   <data name="output_textbox.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -333,7 +333,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;output_textbox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -438,7 +438,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
+  </data>
+  <data name="pathLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pathLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 53</value>
+  </data>
+  <data name="pathLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="pathLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="pathLbl.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;pathLbl.Name" xml:space="preserve">
+    <value>pathLbl</value>
+  </data>
+  <data name="&gt;&gt;pathLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pathLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pathLbl.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

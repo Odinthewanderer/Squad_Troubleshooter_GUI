@@ -120,83 +120,86 @@
   <data name="APP_TITLE" xml:space="preserve">
     <value>Squad Troubleshooter</value>
   </data>
+  <data name="CONFIRM_TITLE" xml:space="preserve">
+    <value>Squad Pfad bestätigen</value>
+  </data>
   <data name="COPY_OUTPUT1" xml:space="preserve">
-    <value>Kopieren Sie Squad-Protokolle auf Desktop</value>
+    <value>Kopiere Squad Logdateien auf den Desktop</value>
   </data>
   <data name="COPY_OUTPUT2" xml:space="preserve">
-    <value>Kopieren…</value>
+    <value>Kopiere...</value>
   </data>
   <data name="COPY_OUTPUT3" xml:space="preserve">
     <value>Kopieren abgeschlossen!</value>
   </data>
   <data name="DISABLE_FIREWALL_BUTTON" xml:space="preserve">
-    <value>Deaktivieren Sie die Windows-Firewall</value>
+    <value>Windows Firewall deaktivieren</value>
   </data>
   <data name="DISABLE_OUTPUT1" xml:space="preserve">
-    <value>Deaktivieren der Windows-Firewall ...</value>
+    <value>Windows Firewall ausschalten...</value>
   </data>
   <data name="DISABLE_OUTPUT2" xml:space="preserve">
-    <value>Firewall deaktiviert</value>
+    <value>Firewall ausgeschaltet</value>
   </data>
   <data name="EAC_BUTTON" xml:space="preserve">
-    <value>Installieren Sie Easy Anti-Cheat (EAC)</value>
+    <value>Easy Anticheat (EAC) erneut installieren</value>
   </data>
   <data name="ENABLE_FIREWALL_BUTTON" xml:space="preserve">
-    <value>Aktivieren Sie die Windows-Firewall</value>
+    <value>Windows Firewall aktivieren</value>
   </data>
   <data name="ENABLE_OUTPUT1" xml:space="preserve">
-    <value>Aktivieren der Windows-Firewall ...</value>
+    <value>Windows Firewall einschalten...</value>
   </data>
   <data name="ENABLE_OUTPUT2" xml:space="preserve">
-    <value>Firewall aktiviert</value>
+    <value>Windows Firewall eingeschaltet</value>
   </data>
   <data name="FILE_MENU_EXIT" xml:space="preserve">
-    <value>Ausgang</value>
+    <value>Exit</value>
   </data>
   <data name="FILE_MENU_PARENT" xml:space="preserve">
     <value>Datei</value>
   </data>
   <data name="GENERATE_BUTTON" xml:space="preserve">
-    <value>Generieren Sie Windows-Ereignisprotokoll</value>
+    <value>Windows Event Logdatei erstellen</value>
   </data>
   <data name="GENERATING_OUTPUT1" xml:space="preserve">
-    <value>Erzeugen von Protokolldateien ...</value>
+    <value>Erstelle Logdateien...</value>
   </data>
   <data name="GENERATING_OUTPUT2" xml:space="preserve">
-    <value>Protokolldateien wurden erstellt und befinden sich nun auf Ihrem Desktop</value>
+    <value>Logdateien wurden erstellt und sind nun am Desktop.</value>
   </data>
   <data name="GENERATING_OUTPUT3" xml:space="preserve">
-    <value>Protokoll wird als gespeichert</value>
+    <value>Logdatei wurde gespeichert als</value>
   </data>
   <data name="GENERATING_OUTPUT4" xml:space="preserve">
-    <value>Bitte senden Sie alle Protokolldateien an support@joinsquad.com</value>
+    <value>Bitte sende alle Logdateien an support@joindquad.com</value>
   </data>
   <data name="GET_HELP_OUTPUT1" xml:space="preserve">
-    <value>Wenn Sie bei der Verwendung des Server-Browsers in Spielversuchen abstoßen, kopieren Sie die folgende URL und besuchen Sie die Foren:</value>
+    <value>Im Falle von Spielabstürzen während der Nutzung des Serverbrowsers, kopiere die folgende URL um zum Squad Forum Eintrag zu gelangen.</value>
   </data>
   <data name="GET_HELP_OUTPUT2" xml:space="preserve">
     <value>http://goo.gl/yvTOfS</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_ERROR_OUTPUT1" xml:space="preserve">
-    <value>Keine Binaries für vc_redist.x64.exe (2013) ...</value>
+    <value>Keine Binärdateien für vc_redist.x64.exe (2013)...</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_ERROR_OUTPUT2" xml:space="preserve">
-    <value>Überspringen vc_redist.x64.exe (2013) installieren ...</value>
+    <value>Überspringe vc_redist.x64.exe (2013) Installation…</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_OUTPUT1" xml:space="preserve">
-    <value>Installation von vc_redist.x64.exe (2013) ...</value>
+    <value>Installiere vc_redist.x64.exe (2013)...</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_OUTPUT2" xml:space="preserve">
     <value>VC Redistributable (2013) Installation abgeschlossen</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_ERROR_OUTPUT1" xml:space="preserve">
-    <value>Keine Binaries für vc_redist.x64.exe (2015) ...</value>
+    <value>Keine Binärdateien für vc_redist.x64.exe (2015)...</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_ERROR_OUTPUT2" xml:space="preserve">
-    <value>Überspringen vc_redist.x64.exe (2015) installieren ...</value>
+    <value>Überspringe vc_redist.x64.exe (2015) Installation…</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_OUTPUT1" xml:space="preserve">
-    <value>Installation von vc_redist.x64.exe (2015) ...</value>
+    <value>Installiere vc_redist.x64.exe (2015)... </value>
   </data>
   <data name="INSTALL_VCREDIST_2015_OUTPUT2" xml:space="preserve">
     <value>VC Redistributable (2015) Installation abgeschlossen</value>
@@ -205,7 +208,7 @@
     <value>Chinesisch</value>
   </data>
   <data name="LANGUAGES_MENU_DUTCH" xml:space="preserve">
-    <value>Niederländer</value>
+    <value>Niederländisch</value>
   </data>
   <data name="LANGUAGES_MENU_ENGLISH" xml:space="preserve">
     <value>Englisch</value>
@@ -220,10 +223,10 @@
     <value>Sprachen</value>
   </data>
   <data name="LANGUAGES_MENU_POLISH" xml:space="preserve">
-    <value>Polieren</value>
+    <value>Polnisch</value>
   </data>
   <data name="LANGUAGES_MENU_PORTUGUESE_BRAZILIAN" xml:space="preserve">
-    <value>Portugiesisch - Brasilianisch</value>
+    <value>Portugiesisch (Brasilien)</value>
   </data>
   <data name="LANGUAGES_MENU_RUSSIAN" xml:space="preserve">
     <value>Russisch</value>
@@ -235,36 +238,39 @@
     <value>Schwedisch</value>
   </data>
   <data name="LOGS_BUTTON" xml:space="preserve">
-    <value>Kopieren Sie Squad Logs auf den Desktop</value>
+    <value>Kopiere Squad Logdatei auf den Desktop</value>
   </data>
   <data name="NUKE_BUTTON" xml:space="preserve">
-    <value>Nuke AppData-Konfigurationsdateien</value>
+    <value>Lösche AppData Konfigurationsdateien</value>
   </data>
   <data name="NUKE_OUTPUT1" xml:space="preserve">
-    <value>AppData-Verzeichnis</value>
+    <value>AppData Verzeichnis</value>
   </data>
   <data name="NUKE_OUTPUT2" xml:space="preserve">
-    <value>Wurde erfolgreich nuked</value>
+    <value>wurde erfolgreich gelöscht.</value>
+  </data>
+  <data name="PATH_CONFIRM" xml:space="preserve">
+    <value>Möchtest du den Standard Squad Pfad wählen?</value>
   </data>
   <data name="REINSTALL_ERROR_OUTPUT1" xml:space="preserve">
-    <value>Keine Binaries für EasyAntiCheat_Setup.exe ...</value>
+    <value>Keine Binärdateien für EasyAntiCheat_Setup.exe...</value>
   </data>
   <data name="REINSTALL_ERROR_OUTPUT2" xml:space="preserve">
-    <value>Überspringen EasyAntiCheat_Setup.exe installieren ...</value>
+    <value>Überspringe EasyAntiCheat_Setup.exe Installation...</value>
   </data>
   <data name="REINSTALL_OUTPUT1" xml:space="preserve">
-    <value>Installieren von EasyAntiCheat_Setup.exe ...</value>
+    <value>Installiere EasyAntiCheat_Setup.exe...</value>
   </data>
   <data name="REINSTALL_OUTPUT2" xml:space="preserve">
     <value>EAC Installation abgeschlossen</value>
   </data>
   <data name="SERVER_BROWSER_BUTTON" xml:space="preserve">
-    <value>Hilf beim Absturz des Spiels auf dem Server-Browser</value>
+    <value>Bekomme Hilfe wenn das Spiel im Serverbrowser abstürzt</value>
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
-    <value>Etwas ist schief gelaufen...</value>
+    <value>Etwas ging schief...</value>
   </data>
   <data name="VCREDIST_BUTTON" xml:space="preserve">
-    <value>Installieren Sie VC Redistributable 2013 + 2015</value>
+    <value>Installiere VC Redistributable 2013 + 2015</value>
   </data>
 </root>

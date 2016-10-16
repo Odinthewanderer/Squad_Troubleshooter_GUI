@@ -52,6 +52,7 @@
             this.dutchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spanishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.portugeseBrazilianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pathLbl = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -216,10 +217,16 @@
             resources.ApplyResources(this.portugeseBrazilianToolStripMenuItem, "portugeseBrazilianToolStripMenuItem");
             this.portugeseBrazilianToolStripMenuItem.Click += new System.EventHandler(this.portugeseBrazilianToolStripMenuItem_Click);
             // 
+            // pathLbl
+            // 
+            resources.ApplyResources(this.pathLbl, "pathLbl");
+            this.pathLbl.Name = "pathLbl";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pathLbl);
             this.Controls.Add(this.output_textbox);
             this.Controls.Add(this.getHelpBtn);
             this.Controls.Add(this.enableBtn);
@@ -267,6 +274,7 @@
         private System.Windows.Forms.ToolStripMenuItem dutchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem spanishToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem portugeseBrazilianToolStripMenuItem;
+        private System.Windows.Forms.Label pathLbl;
     }
 }
 

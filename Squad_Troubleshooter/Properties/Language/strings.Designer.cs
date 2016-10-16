@@ -70,6 +70,15 @@ namespace Squad_Troubleshooter.Properties.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm Squad Path.
+        /// </summary>
+        internal static string CONFIRM_TITLE {
+            get {
+                return ResourceManager.GetString("CONFIRM_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy Squad logs to Desktop.
         /// </summary>
         internal static string COPY_OUTPUT1 {
@@ -421,7 +430,7 @@ namespace Squad_Troubleshooter.Properties.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete AppData Configuration Files.
+        ///   Looks up a localized string similar to Delete AppData configuration files.
         /// </summary>
         internal static string NUKE_BUTTON {
             get {
@@ -439,11 +448,20 @@ namespace Squad_Troubleshooter.Properties.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to has been successfully nuked.
+        ///   Looks up a localized string similar to has been successfully deleted..
         /// </summary>
         internal static string NUKE_OUTPUT2 {
             get {
                 return ResourceManager.GetString("NUKE_OUTPUT2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to use the default Squad path?.
+        /// </summary>
+        internal static string PATH_CONFIRM {
+            get {
+                return ResourceManager.GetString("PATH_CONFIRM", resourceCulture);
             }
         }
         
