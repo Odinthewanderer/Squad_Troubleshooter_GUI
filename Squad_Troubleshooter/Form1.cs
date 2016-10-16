@@ -33,6 +33,7 @@ namespace Squad_Troubleshooter
         private void loadSettings()
         {
             SELECTED_LANGUAGE = Properties.Settings.Default["lang"].ToString();
+            CURRENT_SQUAD_PATH = Properties.Settings.Default["path"].ToString();
             if (SELECTED_LANGUAGE == "ENGLISH")
             {
                 englishToolStripMenuItem.Checked = true;
@@ -168,7 +169,7 @@ namespace Squad_Troubleshooter
         private void Form1_Load(object sender, EventArgs e)
         {
             loadSettings();
-            pathLbl.Text = "DEFAULT SQUAD PATH: " + DEFAULT_SQUAD_PATH;
+            pathLbl.Text = "SQUAD INSTALL PATH: " + CURRENT_SQUAD_PATH;
             switchLanguage();
         }
 
@@ -254,6 +255,8 @@ namespace Squad_Troubleshooter
                 }
             }
             pathLbl.Text = CURRENT_SQUAD_PATH;
+            Properties.Settings.Default["path"] = CURRENT_SQUAD_PATH;
+            Properties.Settings.Default.Save();
             if(testPath(System.IO.Path.Combine(CURRENT_SQUAD_PATH, "Squad.exe")))
             {
                 output_textbox.AppendText(System.IO.Path.Combine(CURRENT_SQUAD_PATH, "Squad.exe") + "\n");
