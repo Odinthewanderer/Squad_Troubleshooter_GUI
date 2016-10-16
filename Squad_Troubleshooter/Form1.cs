@@ -21,7 +21,7 @@ namespace Squad_Troubleshooter
     {
 
         private string SELECTED_LANGUAGE = "ENGLISH";
-        private static string DEFAULT_SQUAD_PATH = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Squad";
+        private static string DEFAULT_SQUAD_PATH = @"C:\Program Files (x86)\Steam\steamapps\common\Squad";
         private string CURRENT_SQUAD_PATH = "";
 
         public Form1()
@@ -29,7 +29,10 @@ namespace Squad_Troubleshooter
             InitializeComponent();
         }
 
-        // This function gets the persistent data settings, loads them into memory, and ensures the correct language is checkd. 
+        /// <summary>
+        /// This function goes through the Propertiest.Settings.Default and loads the lang and the path properties.
+        /// This enables the path and language settings to persist after closing the tool.
+        /// </summary>
         private void loadSettings()
         {
             SELECTED_LANGUAGE = Properties.Settings.Default["lang"].ToString();
@@ -166,6 +169,12 @@ namespace Squad_Troubleshooter
             }
         }
 
+        /// <summary>
+        /// This is the Form Load function. These actions occur everytime the tool is opened. It loads settings for
+        /// persistent data. Sets the label, and switches the language.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
             loadSettings();
@@ -173,8 +182,13 @@ namespace Squad_Troubleshooter
             switchLanguage();
         }
 
-        // Deletes the squad folder in %LocalAppData% (this will wipe your video / control settings in game). 
-        // a good option if a patch has been released and something doesn't seem right.
+        /// <summary>
+        /// This function is the delete AppData configuration button click event. This goes to the directory
+        /// %LOCALAPPDATA%\Squad and deletes the directory. This will wipe your video / control settings in game.
+        /// This can be a good option if a patch has been released and something doesn't seem quite right.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void nukeBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
@@ -199,9 +213,13 @@ namespace Squad_Troubleshooter
             }
         }
 
-        // Generates a Windows Event log, good to do after Squad Crashes to desktop and you can't figure out why, 
-        // it will place the log file on your desktop, upload it to somewhere on the internet and attach it on 
-        // the forums or email it to support@joinsquad.com for myself to take a look at it.
+        /// <summary>
+        /// This generates a Windows Event Log, good to do after Squad crashes to desktop and you can't figure
+        /// out why. It will place the log file on your Desktop. You can upload it to somewhere on the internet and
+        /// attach it on the forums or email it to support@joinsquad.com for Squad support to take a look at.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void generateBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
@@ -230,12 +248,22 @@ namespace Squad_Troubleshooter
             }
         }
 
+        /// <summary>
+        ///  This function will test whether a given path holds the Squad executables.
+        /// </summary>
+        /// <param name="PATH_TO_TEST"></param>
+        /// <returns></returns>
         private bool testPath(string PATH_TO_TEST)
         {
             return (File.Exists(System.IO.Path.Combine(PATH_TO_TEST, "Squad.exe")));
         }
-
-        // Launches the EasyAntiCheat installer in the Squad install directory, make sure you pick squad as your game.
+        
+        /// <summary>
+        /// Launches the EasyAntiCheat installer in the Squad install directory. Make sure you pick Squad as your game. You
+        /// can either use the default Squad path, or pick a new path (which does persist through tool sessions).
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void reinstallBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
@@ -254,7 +282,7 @@ namespace Squad_Troubleshooter
                     CURRENT_SQUAD_PATH = directoryBroswer.SelectedPath;
                 }
             }
-            pathLbl.Text = CURRENT_SQUAD_PATH;
+            pathLbl.Text = "SQUAD INSTALL PATH: " + CURRENT_SQUAD_PATH;
             Properties.Settings.Default["path"] = CURRENT_SQUAD_PATH;
             Properties.Settings.Default.Save();
             if(testPath(System.IO.Path.Combine(CURRENT_SQUAD_PATH, "Squad.exe")))
@@ -268,9 +296,13 @@ namespace Squad_Troubleshooter
                 output_textbox.AppendText(Properties.Language.strings.REINSTALL_ERROR_OUTPUT2 + "\n");
             }
         }
-
-        // Copies all squad log files including UE4 Dump files to your desktop into a SQUAD logs folder, zip it up 
-        // or send individual files.
+        
+        /// <summary>
+        /// Copies all squad logs including UE4 Dump files to your desktop into a SQUAD logs folder, zip it up
+        /// or send individual files.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void copyBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
@@ -297,6 +329,12 @@ namespace Squad_Troubleshooter
             output_textbox.AppendText(Properties.Language.strings.COPY_OUTPUT3 + "\n");
         }
 
+        /// <summary>
+        /// This is the tool that will reinstall EAC, install VC_REDIST 2013 + 2015.
+        /// </summary>
+        /// <param name="toolToInstall"></param>
+        /// <param name="INSTALL_PATH"></param>
+        /// <returns></returns>
         private bool installTool(int toolToInstall, string INSTALL_PATH)
         {
             // This will install the requested tool.
@@ -398,8 +436,12 @@ namespace Squad_Troubleshooter
             return false;
         }
 
-        // Attempts to silently install VC Redistributables 2013 and 2015, if any error occurs you may have to 
-        // make sure your copy of windows is up to date, make sure no updates are available
+        /// <summary>
+        /// Attempts to silently install VC Redistributables 2013 and 2015. If any error occurs you may have to
+        /// make sure your copy of Windows is up to date, make sure no updates are available.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void installBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
@@ -419,7 +461,7 @@ namespace Squad_Troubleshooter
                     CURRENT_SQUAD_PATH = directoryBroswer.SelectedPath;
                 }
             }
-            pathLbl.Text = CURRENT_SQUAD_PATH;
+            pathLbl.Text = "SQUAD INSTALL PATH: " + CURRENT_SQUAD_PATH;
             if (testPath(System.IO.Path.Combine(CURRENT_SQUAD_PATH, "Squad.exe")))
             {
                 output_textbox.AppendText(System.IO.Path.Combine(CURRENT_SQUAD_PATH, "Squad.exe") + "\n");
@@ -434,8 +476,12 @@ namespace Squad_Troubleshooter
                 output_textbox.AppendText(Properties.Language.strings.INSTALL_VCREDIST_2015_ERROR_OUTPUT2 + "\n");
             }
         }
-
-        // Disables Windows firewall, as a troubleshooting step if your having networking issues
+        
+        /// <summary>
+        /// Disables Windows firewall as a troubleshooting step if you are having networking issues.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void disableBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
@@ -459,8 +505,12 @@ namespace Squad_Troubleshooter
                 output_textbox.AppendText(Properties.Language.strings.DISABLE_OUTPUT2 + "\n");
             }
         }
-
-        // Enable Windows firewall, (for when F didn't solve your issue and you want to undo)
+        
+        /// <summary>
+        /// Enables Windows firewall (for when Disabling your firewall did not solve your issue and you want to undo).
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void enableBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
@@ -484,8 +534,12 @@ namespace Squad_Troubleshooter
                 output_textbox.AppendText(Properties.Language.strings.ENABLE_OUTPUT2 + "\n");
             }
         }
-
-        // will provide a URL to visit with the confirmed fix for server browser crashes.
+        
+        /// <summary>
+        /// It will provide a URL to visit with the confirmed fixes for the server browser crashes.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void getHelpBtn_Click(object sender, EventArgs e)
         {
             output_textbox.Clear();
@@ -496,11 +550,19 @@ namespace Squad_Troubleshooter
             output_textbox.AppendText(Properties.Language.strings.GET_HELP_OUTPUT2 + "\n");
         }
 
+        /// <summary>
+        /// This handles the Exit button click for the ToolStripMenuItem.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
 
+        /// <summary>
+        /// This function will set the new CurrentCulture and CurrentUICulture and switch to the newly selected language.
+        /// </summary>
         private void switchLanguage()
         {
             output_textbox.Clear();
@@ -594,6 +656,10 @@ namespace Squad_Troubleshooter
             getHelpBtn.Text = Properties.Language.strings.SERVER_BROWSER_BUTTON;
         }
 
+        /// <summary>
+        /// This will iterate through the Languages list and switch the checked item to the newly selected language.
+        /// </summary>
+        /// <param name="sender"></param>
         private void toggleChecked(object sender)
         {
             ToolStripMenuItem item = (ToolStripMenuItem)sender;
@@ -603,6 +669,11 @@ namespace Squad_Troubleshooter
             }
         }
 
+        /// <summary>
+        /// Switches to new language.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toggleChecked(englishToolStripMenuItem);
@@ -610,6 +681,11 @@ namespace Squad_Troubleshooter
             switchLanguage();
         }
 
+        /// <summary>
+        /// Switches to new language.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void germanToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toggleChecked(germanToolStripMenuItem);
@@ -617,6 +693,11 @@ namespace Squad_Troubleshooter
             switchLanguage();
         }
 
+        /// <summary>
+        /// Switches to new language.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void polishToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toggleChecked(polishToolStripMenuItem);
@@ -624,6 +705,11 @@ namespace Squad_Troubleshooter
             switchLanguage();
         }
 
+        /// <summary>
+        /// Switches to new language.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toggleChecked(frenchToolStripMenuItem);
@@ -631,6 +717,11 @@ namespace Squad_Troubleshooter
             switchLanguage();
         }
 
+        /// <summary>
+        /// Switches to new language.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void chineseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toggleChecked(chineseToolStripMenuItem);
@@ -638,6 +729,11 @@ namespace Squad_Troubleshooter
             switchLanguage();
         }
 
+        /// <summary>
+        /// Switches to new language.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void russianToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toggleChecked(russianToolStripMenuItem);
@@ -645,6 +741,11 @@ namespace Squad_Troubleshooter
             switchLanguage();
         }
 
+        /// <summary>
+        /// Switches to new language.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void swedishToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toggleChecked(swedishToolStripMenuItem);
@@ -652,6 +753,11 @@ namespace Squad_Troubleshooter
             switchLanguage();
         }
 
+        /// <summary>
+        /// Switches to new language.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dutchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toggleChecked(dutchToolStripMenuItem);
@@ -659,6 +765,11 @@ namespace Squad_Troubleshooter
             switchLanguage();
         }
 
+        /// <summary>
+        /// Switches to new language.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void spanishToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toggleChecked(spanishToolStripMenuItem);
@@ -666,26 +777,16 @@ namespace Squad_Troubleshooter
             switchLanguage();
         }
 
+        /// <summary>
+        /// Switches to new language.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void portugeseBrazilianToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toggleChecked(portugeseBrazilianToolStripMenuItem);
             SELECTED_LANGUAGE = "PORTUGUESE-BRAZILIAN";
             switchLanguage();
-        }
-
-        private void pathBtn_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog directoryBroswer = new FolderBrowserDialog();
-            DialogResult result = directoryBroswer.ShowDialog();
-
-            if (!string.IsNullOrWhiteSpace(directoryBroswer.SelectedPath))
-            {
-                MessageBox.Show(directoryBroswer.SelectedPath);
-            }
-            else
-            {
-                MessageBox.Show("NULL");
-            }
         }
     }
 }
