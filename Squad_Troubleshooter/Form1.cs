@@ -97,6 +97,7 @@ namespace Squad_Troubleshooter
                 output_textbox.AppendText(Properties.Language.strings.GENERATING_OUTPUT4 + "\n");
             }
         }
+
         // Launches the EasyAntiCheat installer in the Squad install directory, make sure you pick squad as your game.
         private void reinstallBtn_Click(object sender, EventArgs e)
         {
