@@ -6,7 +6,7 @@
       <Value Profile="(Default)">ENGLISH</Value>
     </Setting>
     <Setting Name="path" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\\Program Files (x86)\\Steam\\steamapps\\common\\Squad</Value>
+      <Value Profile="(Default)">C:\Program Files (x86)\Steam\steamapps\common\Squad</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="APP_TITLE" xml:space="preserve">
-    <value>Squad Troubleshooter</value>
+    <value>Solucionador de Problemas do Squad</value>
   </data>
   <data name="CONFIRM_TITLE" xml:space="preserve">
-    <value>Confirm Squad Path</value>
+    <value>Confirme o diretório do Squad</value>
   </data>
   <data name="COPY_OUTPUT1" xml:space="preserve">
-    <value>Cópia do pelotão registra para o Desktop</value>
+    <value>Copiar logs do Squad para sua Área de Trabalho</value>
   </data>
   <data name="COPY_OUTPUT2" xml:space="preserve">
-    <value>A copiar ...</value>
+    <value>Copiando…</value>
   </data>
   <data name="COPY_OUTPUT3" xml:space="preserve">
-    <value>Cópia completa!</value>
+    <value>Cópia Concluída!</value>
   </data>
   <data name="DISABLE_FIREWALL_BUTTON" xml:space="preserve">
-    <value>Desativar o Firewall do Windows</value>
+    <value>Disabilitar o firewall do Windows</value>
   </data>
   <data name="DISABLE_OUTPUT1" xml:space="preserve">
-    <value>Desativar o firewall do Windows ...</value>
+    <value>Desabilitando o firewall do Windows...</value>
   </data>
   <data name="DISABLE_OUTPUT2" xml:space="preserve">
-    <value>Firewall pessoas com mobilidade condicionada</value>
+    <value>Firewall Disabilitado</value>
   </data>
   <data name="EAC_BUTTON" xml:space="preserve">
-    <value>Reinstalar Fácil Anti-Cheat (EAC)</value>
+    <value>Reinstalar o Easy Anti-Cheat (EAC)</value>
   </data>
   <data name="ENABLE_FIREWALL_BUTTON" xml:space="preserve">
-    <value>Ativar o Firewall do Windows</value>
+    <value>Habilitar o firewall do Windows</value>
   </data>
   <data name="ENABLE_OUTPUT1" xml:space="preserve">
-    <value>Permitindo que o firewall do Windows ...</value>
+    <value>Habilitando o firewall do Windows...</value>
   </data>
   <data name="ENABLE_OUTPUT2" xml:space="preserve">
-    <value>Firewall ativado</value>
+    <value>Firewall Habilitado</value>
   </data>
   <data name="FILE_MENU_EXIT" xml:space="preserve">
-    <value>Saída</value>
+    <value>Sair</value>
   </data>
   <data name="FILE_MENU_PARENT" xml:space="preserve">
     <value>Arquivo</value>
@@ -163,46 +163,46 @@
     <value>Gerar Log de Eventos do Windows</value>
   </data>
   <data name="GENERATING_OUTPUT1" xml:space="preserve">
-    <value>Gerar arquivos de log ...</value>
+    <value>Gerando arquivos de log…</value>
   </data>
   <data name="GENERATING_OUTPUT2" xml:space="preserve">
-    <value>Arquivos de log foram gerados e estão agora em seu desktop</value>
+    <value>Os arquivos de logs foram gerados e estão agora na sua Área de Trabalho</value>
   </data>
   <data name="GENERATING_OUTPUT3" xml:space="preserve">
-    <value>Log é salvo como</value>
+    <value>O Log foi salvo como </value>
   </data>
   <data name="GENERATING_OUTPUT4" xml:space="preserve">
-    <value>Por favor, envie todos os arquivos de log para support@joinsquad.com</value>
+    <value>Por favor envie todos os arquivos de logs para support@joinsquad.com</value>
   </data>
   <data name="GET_HELP_OUTPUT1" xml:space="preserve">
-    <value>Se você está experiancing jogo trava ao utilizar o browser de servidor no jogo de copiar o seguinte URL e visitar os fóruns:</value>
+    <value>Se você encontrar travamentos do jogo quando estiver usando a listagem de servidores dentro do jogo copie o endereço e visite os foruns:</value>
   </data>
   <data name="GET_HELP_OUTPUT2" xml:space="preserve">
     <value>http://goo.gl/yvTOfS</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_ERROR_OUTPUT1" xml:space="preserve">
-    <value>Não binários para vc_redist.x64.exe (2013) ...</value>
+    <value>Arquivo vc_redist.x64.exe (2013) não encontrado...</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_ERROR_OUTPUT2" xml:space="preserve">
-    <value>Ignorando vc_redist.x64.exe (2013) instalar ...</value>
+    <value>Pulando a instalação do vc_redist.x64.exe (2013)...</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_OUTPUT1" xml:space="preserve">
-    <value>Instalando vc_redist.x64.exe (2013) ...</value>
+    <value>Instalando vc_redist.x64.exe (2013)...</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_OUTPUT2" xml:space="preserve">
-    <value>VC Redistributable (2013) completo instalação</value>
+    <value>Instalação das bibliotecas Visual C++ (2013) concluída</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_ERROR_OUTPUT1" xml:space="preserve">
-    <value>Não binários para vc_redist.x64.exe (2015) ...</value>
+    <value>Arquivo vc_redist.x64.exe (2015) não encontrado...</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_ERROR_OUTPUT2" xml:space="preserve">
-    <value>Ignorando vc_redist.x64.exe (2015) instalar ...</value>
+    <value>Pulando a instalação do vc_redist.x64.exe (2015)...</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_OUTPUT1" xml:space="preserve">
-    <value>Instalando vc_redist.x64.exe (2015) ...</value>
+    <value>Instalando vc_redist.x64.exe (2015)...</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_OUTPUT2" xml:space="preserve">
-    <value>VC Redistributable (2015) completo instalação</value>
+    <value>Instalação das bibliotecas Visual C++ (2015) concluída</value>
   </data>
   <data name="LANGUAGES_MENU_CHINESE" xml:space="preserve">
     <value>Chinês</value>
@@ -220,13 +220,13 @@
     <value>Alemão</value>
   </data>
   <data name="LANGUAGES_MENU_PARENT" xml:space="preserve">
-    <value>Idiomas</value>
+    <value>Línguas</value>
   </data>
   <data name="LANGUAGES_MENU_POLISH" xml:space="preserve">
     <value>Polonês</value>
   </data>
   <data name="LANGUAGES_MENU_PORTUGUESE_BRAZILIAN" xml:space="preserve">
-    <value>Português - Brasil</value>
+    <value>Português Brasileiro</value>
   </data>
   <data name="LANGUAGES_MENU_RUSSIAN" xml:space="preserve">
     <value>Russo</value>
@@ -238,39 +238,39 @@
     <value>Sueco</value>
   </data>
   <data name="LOGS_BUTTON" xml:space="preserve">
-    <value>Cópia do pelotão Logs para o Desktop</value>
+    <value>Copiar Logs do Squad para a Área de Trabalho</value>
   </data>
   <data name="NUKE_BUTTON" xml:space="preserve">
-    <value>Excluir AppData Arquivos de configuração</value>
+    <value>Remover arquivos de configuração do diretório AppData</value>
   </data>
   <data name="NUKE_OUTPUT1" xml:space="preserve">
     <value>Diretório AppData</value>
   </data>
   <data name="NUKE_OUTPUT2" xml:space="preserve">
-    <value>Foi nukado com sucesso</value>
+    <value>foi removido com sucesso.</value>
   </data>
   <data name="PATH_CONFIRM" xml:space="preserve">
-    <value>Do you want to use the default Squad path?</value>
+    <value>Você deseja usar o diretório padrão do Squad? </value>
   </data>
   <data name="REINSTALL_ERROR_OUTPUT1" xml:space="preserve">
-    <value>Não binários para EasyAntiCheat_Setup.exe ...</value>
+    <value>Arquivo EasyAntiCheat_Setup.exe não encontrado...</value>
   </data>
   <data name="REINSTALL_ERROR_OUTPUT2" xml:space="preserve">
-    <value>Ignorando instalar EasyAntiCheat_Setup.exe ...</value>
+    <value>Pulando instalação do EasyAntiCheat_Setup.exe...</value>
   </data>
   <data name="REINSTALL_OUTPUT1" xml:space="preserve">
-    <value>Instalando EasyAntiCheat_Setup.exe ...</value>
+    <value>Instalando EasyAntiCheat_Setup.exe...</value>
   </data>
   <data name="REINSTALL_OUTPUT2" xml:space="preserve">
-    <value>completa instalação EAC</value>
+    <value>Completou Instalação do EAC</value>
   </data>
   <data name="SERVER_BROWSER_BUTTON" xml:space="preserve">
-    <value>Obter ajuda com o jogo de bater no navegador servidor</value>
+    <value>Obter ajuda com travamento do jogo na listagem de servidores</value>
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
-    <value>Algo deu errado ...</value>
+    <value>Algo deu errado...</value>
   </data>
   <data name="VCREDIST_BUTTON" xml:space="preserve">
-    <value>Instale VC Redistributable 2013 + 2015</value>
+    <value>Instalar bibliotecas Visual C++ 2013 e 2015</value>
   </data>
 </root>

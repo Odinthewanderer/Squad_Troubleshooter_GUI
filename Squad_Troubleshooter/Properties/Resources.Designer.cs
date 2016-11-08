@@ -73,6 +73,16 @@ namespace Squad_Troubleshooter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap squadlogo_black_gold_hires1 {
+            get {
+                object obj = ResourceManager.GetObject("squadlogo_black_gold_hires1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap squadlogo_black_hires {
             get {
                 object obj = ResourceManager.GetObject("squadlogo_black_hires", resourceCulture);

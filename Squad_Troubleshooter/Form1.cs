@@ -760,9 +760,9 @@ namespace Squad_Troubleshooter
         /// <param name="e"></param>
         private void dutchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toggleChecked(dutchToolStripMenuItem);
-            SELECTED_LANGUAGE = "DUTCH";
-            switchLanguage();
+        //    toggleChecked(dutchToolStripMenuItem);
+        //    SELECTED_LANGUAGE = "DUTCH";
+        //    switchLanguage();
         }
 
         /// <summary>

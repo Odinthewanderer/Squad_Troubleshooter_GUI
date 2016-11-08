@@ -37,7 +37,7 @@ namespace Squad_Troubleshooter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\\\Program Files (x86)\\\\Steam\\\\steamapps\\\\common\\\\Squad")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\Steam\\steamapps\\common\\Squad")]
         public string path {
             get {
                 return ((string)(this["path"]));

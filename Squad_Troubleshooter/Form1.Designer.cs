@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.nukeBtn = new System.Windows.Forms.Button();
             this.generateBtn = new System.Windows.Forms.Button();
@@ -47,13 +48,14 @@
             this.polishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.frenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chineseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.swedishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dutchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spanishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.portugeseBrazilianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pathLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -149,8 +151,8 @@
             this.polishToolStripMenuItem,
             this.frenchToolStripMenuItem,
             this.chineseToolStripMenuItem,
-            this.russianToolStripMenuItem,
             this.swedishToolStripMenuItem,
+            this.russianToolStripMenuItem,
             this.dutchToolStripMenuItem,
             this.spanishToolStripMenuItem,
             this.portugeseBrazilianToolStripMenuItem});
@@ -189,17 +191,17 @@
             resources.ApplyResources(this.chineseToolStripMenuItem, "chineseToolStripMenuItem");
             this.chineseToolStripMenuItem.Click += new System.EventHandler(this.chineseToolStripMenuItem_Click);
             // 
-            // russianToolStripMenuItem
-            // 
-            this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
-            resources.ApplyResources(this.russianToolStripMenuItem, "russianToolStripMenuItem");
-            this.russianToolStripMenuItem.Click += new System.EventHandler(this.russianToolStripMenuItem_Click);
-            // 
             // swedishToolStripMenuItem
             // 
             this.swedishToolStripMenuItem.Name = "swedishToolStripMenuItem";
             resources.ApplyResources(this.swedishToolStripMenuItem, "swedishToolStripMenuItem");
             this.swedishToolStripMenuItem.Click += new System.EventHandler(this.swedishToolStripMenuItem_Click);
+            // 
+            // russianToolStripMenuItem
+            // 
+            this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
+            resources.ApplyResources(this.russianToolStripMenuItem, "russianToolStripMenuItem");
+            this.russianToolStripMenuItem.Click += new System.EventHandler(this.russianToolStripMenuItem_Click);
             // 
             // dutchToolStripMenuItem
             // 
@@ -226,10 +228,15 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Squad_Troubleshooter.Properties.Resources.squadlogo_black_hires;
+            this.pictureBox1.BackgroundImage = global::Squad_Troubleshooter.Properties.Resources.squadlogo_black_gold_hires1;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             // 
             // Form1
             // 
@@ -287,6 +294,7 @@
         private System.Windows.Forms.ToolStripMenuItem portugeseBrazilianToolStripMenuItem;
         private System.Windows.Forms.Label pathLbl;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
