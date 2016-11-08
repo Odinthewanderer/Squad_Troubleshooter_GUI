@@ -53,7 +53,9 @@
             this.spanishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.portugeseBrazilianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pathLbl = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // nukeBtn
@@ -222,10 +224,18 @@
             resources.ApplyResources(this.pathLbl, "pathLbl");
             this.pathLbl.Name = "pathLbl";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Squad_Troubleshooter.Properties.Resources.squadlogo_black_hires;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pathLbl);
             this.Controls.Add(this.output_textbox);
             this.Controls.Add(this.getHelpBtn);
@@ -244,6 +254,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,6 +286,7 @@
         private System.Windows.Forms.ToolStripMenuItem spanishToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem portugeseBrazilianToolStripMenuItem;
         private System.Windows.Forms.Label pathLbl;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
