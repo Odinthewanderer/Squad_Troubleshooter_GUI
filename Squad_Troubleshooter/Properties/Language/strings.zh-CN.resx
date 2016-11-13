@@ -118,91 +118,91 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="APP_TITLE" xml:space="preserve">
-    <value>Squad疑难解答</value>
+    <value>Squad Troubleshooter</value>
   </data>
   <data name="CONFIRM_TITLE" xml:space="preserve">
-    <value>Confirm Squad Path</value>
+    <value>确认"战术小队Squad"的路径</value>
   </data>
   <data name="COPY_OUTPUT1" xml:space="preserve">
-    <value>将队列日志复制到桌面</value>
+    <value>将"战术小队squad"的Log记录复制到桌面</value>
   </data>
   <data name="COPY_OUTPUT2" xml:space="preserve">
-    <value>正在复制...</value>
+    <value>正在复制…</value>
   </data>
   <data name="COPY_OUTPUT3" xml:space="preserve">
     <value>复制完成！</value>
   </data>
   <data name="DISABLE_FIREWALL_BUTTON" xml:space="preserve">
-    <value>禁用Windows防火墙</value>
+    <value>关闭Windows防火墙</value>
   </data>
   <data name="DISABLE_OUTPUT1" xml:space="preserve">
-    <value>正在禁用Windows防火墙...</value>
+    <value>正在关闭Windows防火墙...</value>
   </data>
   <data name="DISABLE_OUTPUT2" xml:space="preserve">
-    <value>防火墙已禁用</value>
+    <value>Windows防火墙已关闭</value>
   </data>
   <data name="EAC_BUTTON" xml:space="preserve">
-    <value>重新安装Easy Anti-Cheat（EAC）</value>
+    <value>重装 Easy Anti-Cheat反作弊软件 (EAC)</value>
   </data>
   <data name="ENABLE_FIREWALL_BUTTON" xml:space="preserve">
     <value>启用Windows防火墙</value>
   </data>
   <data name="ENABLE_OUTPUT1" xml:space="preserve">
-    <value>正在启用Windows防火墙...</value>
+    <value>正在启动Windows防火墙...</value>
   </data>
   <data name="ENABLE_OUTPUT2" xml:space="preserve">
-    <value>已启用防火墙</value>
+    <value>Windows防火墙已启动</value>
   </data>
   <data name="FILE_MENU_EXIT" xml:space="preserve">
-    <value>出口</value>
+    <value>退出</value>
   </data>
   <data name="FILE_MENU_PARENT" xml:space="preserve">
     <value>文件</value>
   </data>
   <data name="GENERATE_BUTTON" xml:space="preserve">
-    <value>生成Windows事件日志</value>
+    <value>生成Windows记录文件</value>
   </data>
   <data name="GENERATING_OUTPUT1" xml:space="preserve">
-    <value>正在生成日志文件...</value>
+    <value>正在生成Windows记录文件…</value>
   </data>
   <data name="GENERATING_OUTPUT2" xml:space="preserve">
-    <value>日志文件已生成，现在已在您的桌面上</value>
+    <value>记录文件已经成功生成并存放于桌面</value>
   </data>
   <data name="GENERATING_OUTPUT3" xml:space="preserve">
-    <value>日志保存为</value>
+    <value>记录文件另存为</value>
   </data>
   <data name="GENERATING_OUTPUT4" xml:space="preserve">
-    <value>请将所有日志文件发送到support@joinsquad.com</value>
+    <value>请将所有记录文件发送至：support@joinsquad.com</value>
   </data>
   <data name="GET_HELP_OUTPUT1" xml:space="preserve">
-    <value>如果你是经验游戏崩溃时使用服务器浏览器在游戏中复制以下URL并访问论坛：</value>
+    <value>如果您在使用服务器浏览器（Server Browser）的时候游戏奔溃,请复制下列URL链接并访问官方论坛（官网暂无中文板块）:</value>
   </data>
   <data name="GET_HELP_OUTPUT2" xml:space="preserve">
     <value>http://goo.gl/yvTOfS</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_ERROR_OUTPUT1" xml:space="preserve">
-    <value>没有vc_redist.x64.exe的二进制文件（2013）...</value>
+    <value>找不到 vc_redist.x64.exe (2013)安装文件...</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_ERROR_OUTPUT2" xml:space="preserve">
-    <value>正在跳过vc_redist.x64.exe（2013）安装...</value>
+    <value>跳过 vc_redist.x64.exe (2013) 安装…</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_OUTPUT1" xml:space="preserve">
-    <value>安装vc_redist.x64.exe（2013）...</value>
+    <value>正在安装 vc_redist.x64.exe (2013)...</value>
   </data>
   <data name="INSTALL_VCREDIST_2013_OUTPUT2" xml:space="preserve">
-    <value>VC Redistributable（2013）安装完成</value>
+    <value>VC Redistributable (2013) 安装完成</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_ERROR_OUTPUT1" xml:space="preserve">
-    <value>没有vc_redist.x64.exe的二进制文件（2015）...</value>
+    <value>找不到 vc_redist.x64.exe (2015)安装文件...</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_ERROR_OUTPUT2" xml:space="preserve">
-    <value>跳过vc_redist.x64.exe（2015）安装...</value>
+    <value>跳过 vc_redist.x64.exe (2015) 安装...</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_OUTPUT1" xml:space="preserve">
-    <value>安装vc_redist.x64.exe（2015）...</value>
+    <value>正在安装 vc_redist.x64.exe (2015)...</value>
   </data>
   <data name="INSTALL_VCREDIST_2015_OUTPUT2" xml:space="preserve">
-    <value>VC Redistributable（2015）安装完成</value>
+    <value>VC Redistributable (2015) 安装完成</value>
   </data>
   <data name="LANGUAGES_MENU_CHINESE" xml:space="preserve">
     <value>中文</value>
@@ -223,10 +223,10 @@
     <value>语言</value>
   </data>
   <data name="LANGUAGES_MENU_POLISH" xml:space="preserve">
-    <value>抛光</value>
+    <value>波兰语</value>
   </data>
   <data name="LANGUAGES_MENU_PORTUGUESE_BRAZILIAN" xml:space="preserve">
-    <value>葡萄牙语 - 巴西</value>
+    <value>葡萄牙语</value>
   </data>
   <data name="LANGUAGES_MENU_RUSSIAN" xml:space="preserve">
     <value>俄语</value>
@@ -235,42 +235,42 @@
     <value>西班牙语</value>
   </data>
   <data name="LANGUAGES_MENU_SWEDISH" xml:space="preserve">
-    <value>瑞典</value>
+    <value>瑞典语</value>
   </data>
   <data name="LOGS_BUTTON" xml:space="preserve">
-    <value>将队列日志复制到桌面</value>
+    <value>将"战术小队squad"的Log记录复制到桌面</value>
   </data>
   <data name="NUKE_BUTTON" xml:space="preserve">
-    <value>Nuke AppData配置文件</value>
+    <value>删除 AppData configuration files相关内容</value>
   </data>
   <data name="NUKE_OUTPUT1" xml:space="preserve">
-    <value>AppData目录</value>
+    <value>AppData directory</value>
   </data>
   <data name="NUKE_OUTPUT2" xml:space="preserve">
-    <value>已成功注册</value>
+    <value>已成功删除.</value>
   </data>
   <data name="PATH_CONFIRM" xml:space="preserve">
-    <value>Do you want to use the default Squad path?</value>
+    <value>您想使用"战术小队squad"的默认路径吗?</value>
   </data>
   <data name="REINSTALL_ERROR_OUTPUT1" xml:space="preserve">
-    <value>EasyAntiCheat_Setup.exe没有二进制文件...</value>
+    <value>找不到EasyAntiCheat_Setup.exe...</value>
   </data>
   <data name="REINSTALL_ERROR_OUTPUT2" xml:space="preserve">
-    <value>正在跳过EasyAntiCheat_Setup.exe安装...</value>
+    <value>跳过EasyAntiCheat_Setup.exe安装...</value>
   </data>
   <data name="REINSTALL_OUTPUT1" xml:space="preserve">
-    <value>正在安装EasyAntiCheat_Setup.exe ...</value>
+    <value>正在安装 EasyAntiCheat_Setup.exe...</value>
   </data>
   <data name="REINSTALL_OUTPUT2" xml:space="preserve">
-    <value>EAC安装完成</value>
+    <value>EAC反作弊软件安装完成</value>
   </data>
   <data name="SERVER_BROWSER_BUTTON" xml:space="preserve">
-    <value>获取有关服务器浏览器上的游戏崩溃的帮助</value>
+    <value>服务器浏览器（server browser）导致游戏崩溃的解决方法</value>
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
-    <value>出了些问题...</value>
+    <value>发生错误...</value>
   </data>
   <data name="VCREDIST_BUTTON" xml:space="preserve">
-    <value>安装VC Redistributable 2013 + 2015</value>
+    <value>安装 VC Redistributable 2013 + 2015</value>
   </data>
 </root>
